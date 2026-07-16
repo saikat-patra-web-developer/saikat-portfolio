@@ -23,10 +23,13 @@ export default function Work() {
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 items-start">
           
           {/* Project 1: Quote My Blinds */}
-          <article className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform,border-color] duration-700 ease-out delay-75 group rounded-3xl overflow-hidden bg-zinc-50 border border-zinc-200/60 hover:border-[#4f39f6] hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+          <article className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform,border-color] duration-700 ease-out delay-75 group/card rounded-3xl overflow-hidden bg-zinc-50 border border-zinc-200/60 hover:border-[#4f39f6] hover:shadow-xl transition-all duration-300 flex flex-col h-full">
             <div className="overflow-hidden bg-zinc-200 aspect-video relative w-full">
-              {/* Image with Video Play Icon Overlay on Hover to "Show, Don't Just Tell" */}
-              <img className="w-full h-full object-cover block transition-transform duration-700 ease-out group-hover:scale-[1.03]" src="./qmb.png" alt="Quote My Blinds Custom CRM" loading="lazy" />
+              <img className="w-full h-full object-cover block transition-transform duration-700 ease-out group-hover/card:scale-[1.03]" src="./qmb.png" alt="Quote My Blinds Custom CRM" loading="lazy" />
+              {/* Overlay Link */}
+              <a href="https://quotemyblinds.com/" target="_blank" rel="noopener noreferrer" className="absolute inset-0 bg-[#4f39f6]/20 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="bg-white px-6 py-2 rounded-full font-bold text-zinc-900 shadow-lg translate-y-2 group-hover/card:translate-y-0 transition-transform duration-300">View Project →</span>
+              </a>
             </div>
             <div className="p-6 flex flex-col flex-grow">
               <div className="flex flex-wrap gap-2 mb-4">
@@ -34,86 +37,50 @@ export default function Work() {
                 <span className="text-xs font-semibold bg-zinc-200/60 text-zinc-600 px-3 py-1 rounded-md">Laravel API</span>
                 <span className="text-xs font-semibold bg-zinc-200/60 text-zinc-600 px-3 py-1 rounded-md">Tailwind CSS</span>
               </div>
-              
-              <a href="https://quotemyblinds.com/" target="_blank" rel="noopener noreferrer" className="inline-block group/title mb-4">
-                <h3 className="font-sans font-bold text-xl text-zinc-900 group-hover/title:text-[#4f39f6] transition-colors duration-200">Quote My Blinds</h3>
-              </a>
-
-              {/* Case Study Block */}
+              <h3 className="font-sans font-bold text-xl text-zinc-900 mb-4">Quote My Blinds</h3>
               <div className="space-y-3 text-xs text-zinc-600 mb-6 flex-grow">
-                <p><strong>Problem:</strong> Fragmented lead distribution and slow, manual tracking pipelines resulting in missed sales opportunities.</p>
-                <p><strong>Solution:</strong> Engineered a <strong>Custom CRM and pipeline orchestration platform</strong> utilizing a centralized API structure for highly optimized data fetching and state handling.</p>
-                <p className="pt-2 border-t border-zinc-200/60 text-[#4f39f6]">
-                  <strong>Result:</strong> Accelerated internal workflows, <strong>saving over 10 hours/week</strong> in pipeline updates.
-                </p>
+                <p>Engineered a custom CRM and sales pipeline orchestration platform to replace manual tracking, saving the team over 10 hours/week.</p>
               </div>
-
-              <a href="https://quotemyblinds.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm font-bold text-zinc-900 hover:text-[#4f39f6] transition-colors duration-200 group/link mt-auto">
-                View Project 
-                <svg className="w-4 h-4 transition-transform duration-200 group-hover/link:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                </svg>
-              </a>
             </div>
           </article>
 
           {/* Project 2: Purge Blinds */}
-          <article className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform,border-color] duration-700 ease-out delay-150 group rounded-3xl overflow-hidden bg-zinc-50 border border-zinc-200/60 hover:border-[#4f39f6] hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+          <article className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform,border-color] duration-700 ease-out delay-150 group/card rounded-3xl overflow-hidden bg-zinc-50 border border-zinc-200/60 hover:border-[#4f39f6] hover:shadow-xl transition-all duration-300 flex flex-col h-full">
             <div className="overflow-hidden bg-zinc-200 aspect-video relative w-full">
-              <img className="w-full h-full object-cover block transition-transform duration-700 ease-out group-hover:scale-[1.03]" src="./purge.png" alt="Purge Blinds Quote Portal" loading="lazy" />
+              <img className="w-full h-full object-cover block transition-transform duration-700 ease-out group-hover/card:scale-[1.03]" src="./purge.png" alt="Purge Blinds Quote Portal" loading="lazy" />
+              <a href="https://www.purge.co.nz/" target="_blank" rel="noopener noreferrer" className="absolute inset-0 bg-[#4f39f6]/20 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="bg-white px-6 py-2 rounded-full font-bold text-zinc-900 shadow-lg translate-y-2 group-hover/card:translate-y-0 transition-transform duration-300">View Project →</span>
+              </a>
             </div>
             <div className="p-6 flex flex-col flex-grow">
               <div className="flex flex-wrap gap-2 mb-4">
                 <span className="text-xs font-semibold bg-indigo-50 text-[#4f39f6] border border-indigo-200/60 px-3 py-1 rounded-md">WordPress CMS</span>
                 <span className="text-xs font-semibold bg-zinc-200/60 text-zinc-600 px-3 py-1 rounded-md">Bootstrap</span>
               </div>
-              
-              <a href="https://www.purge.co.nz/" target="_blank" rel="noopener noreferrer" className="inline-block group/title mb-4">
-                <h3 className="font-sans font-bold text-xl text-zinc-900 group-hover/title:text-[#4f39f6] transition-colors duration-200">Purge Blinds</h3>
-              </a>
-
-              {/* Case Study Block */}
+              <h3 className="font-sans font-bold text-xl text-zinc-900 mb-4">Purge Blinds</h3>
               <div className="space-y-3 text-xs text-zinc-600 mb-6 flex-grow">
-                <p><strong>Problem:</strong> Complex blind configuration rules caused severe bottlenecks during customer quotes and pricing generation.</p>
-                <p><strong>Solution:</strong> Built a <strong>custom blind manufacturing portal</strong> with dynamic pricing logic and automated hardware/fabric data-grouping dependencies.</p>
-                <p className="pt-2 border-t border-zinc-200/60 text-[#4f39f6]">
-                  <strong>Result:</strong> Reduced administrative overhead by <strong>streamlining customized pricing configurations</strong>.
-                </p>
+                <p>Built a custom manufacturing portal with dynamic pricing logic, reducing administrative overhead through automated configuration.</p>
               </div>
-
-              <a href="https://www.purge.co.nz/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm font-bold text-zinc-900 hover:text-[#4f39f6] transition-colors duration-200 group/link mt-auto">
-                View Project →
-              </a>
             </div>
           </article>
 
           {/* Project 3: Dream Big Group */}
-          <article className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform,border-color] duration-700 ease-out delay-200 group rounded-3xl overflow-hidden bg-zinc-50 border border-zinc-200/60 hover:border-[#4f39f6] hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+          <article className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform,border-color] duration-700 ease-out delay-200 group/card rounded-3xl overflow-hidden bg-zinc-50 border border-zinc-200/60 hover:border-[#4f39f6] hover:shadow-xl transition-all duration-300 flex flex-col h-full">
             <div className="overflow-hidden bg-zinc-200 aspect-video relative w-full">
-              <img className="w-full h-full object-cover block transition-transform duration-700 ease-out group-hover:scale-[1.03]" src="./db.png" alt="Dream Big Group Portal" loading="lazy" />
+              <img className="w-full h-full object-cover block transition-transform duration-700 ease-out group-hover/card:scale-[1.03]" src="./db.png" alt="Dream Big Group Portal" loading="lazy" />
+              <a href="https://dreambiggroup.in/" target="_blank" rel="noopener noreferrer" className="absolute inset-0 bg-[#4f39f6]/20 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="bg-white px-6 py-2 rounded-full font-bold text-zinc-900 shadow-lg translate-y-2 group-hover/card:translate-y-0 transition-transform duration-300">View Project →</span>
+              </a>
             </div>
             <div className="p-6 flex flex-col flex-grow">
               <div className="flex flex-wrap gap-2 mb-4">
                 <span className="text-xs font-semibold bg-indigo-50 text-[#4f39f6] border border-indigo-200/60 px-3 py-1 rounded-md">WordPress CMS</span>
                 <span className="text-xs font-semibold bg-zinc-200/60 text-zinc-600 px-3 py-1 rounded-md">Tailwind CSS</span>
               </div>
-              
-              <a href="https://dreambiggroup.in/" target="_blank" rel="noopener noreferrer" className="inline-block group/title mb-4">
-                <h3 className="font-sans font-bold text-xl text-zinc-900 group-hover/title:text-[#4f39f6] transition-colors duration-200">Dream Big Group</h3>
-              </a>
-
-              {/* Case Study Block */}
+              <h3 className="font-sans font-bold text-xl text-zinc-900 mb-4">Dream Big Group</h3>
               <div className="space-y-3 text-xs text-zinc-600 mb-6 flex-grow">
-                <p><strong>Problem:</strong> Slow content loading speeds and poor UI architecture drove high user bounce rates on premium property pages.</p>
-                <p><strong>Solution:</strong> Developed a high-fidelity real estate platform backed by <strong>clean database custom queries</strong> and optimized media rendering configurations.</p>
-                <p className="pt-2 border-t border-zinc-200/60 text-[#4f39f6]">
-                  <strong>Result:</strong> Drastically **reduced average page load times by ~50%** across heavy listings pages.
-                </p>
+                <p>Architected a high-fidelity real estate platform, reducing average page load times by ~50% through optimized database and media handling.</p>
               </div>
-
-              <a href="https://dreambiggroup.in/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm font-bold text-zinc-900 hover:text-[#4f39f6] transition-colors duration-200 group/link mt-auto">
-                View Project →
-              </a>
             </div>
           </article>
 

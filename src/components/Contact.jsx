@@ -51,6 +51,13 @@ export default function Contact() {
                 </span>
                 <span className="text-sm font-medium">linkedin.com/in/saikat-patra-web-developer</span>
               </a>
+
+              <a href="https://github.com/saikat-patra-web-developer" rel="noopener noreferrer" target="_blank" className="group flex items-center gap-3.5 text-zinc-400 hover:text-white transition-colors duration-250">
+                <span className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl group-hover:bg-[#4f39f6] group-hover:text-white transition-all shrink-0">
+                  <i className="bi bi-github text-lg"></i>
+                </span>
+                <span className="text-sm font-medium">github.com/saikat-patra-web-developer</span>
+              </a>
             </div>
           </div>
         </div>
