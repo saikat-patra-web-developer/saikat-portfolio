@@ -3,6 +3,93 @@ import React from 'react';
 export default function Contact() {
   return (
     <section id="contact" className="relative py-28 bg-[#fafafa] overflow-hidden border-t border-b border-zinc-100">
+      {/* CSS Styles injection for custom vertical flip keyframes, text mirroring fixes, and automatic hover styles */}
+      <style>{`
+        /* Define 3D perspective to make vertical flips look realistic */
+        .perspective-container {
+          perspective: 1000px;
+        }
+        
+        /* The Card flip setup */
+        .flippable-card {
+          position: relative;
+          transform-style: preserve-3d;
+          
+          /* Separate transition for leaving vs entering: enforces full completion on leave */
+          transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s, background-color 0.3s;
+          
+          /* Hardware acceleration to prevent text/icon haziness during 3D transforms */
+          will-change: transform;
+          transform: translateZ(0);
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Front & Back face base containment rules */
+        .card-front, .card-back {
+          position: absolute;
+          inset: 0;
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: 1.25rem; /* p-5 match */
+          border-radius: 1rem; /* rounded-2xl match */
+          width: 100%;
+          height: 100%;
+          
+          /* Keep text sharp inside the faces */
+          transform: translateZ(0);
+        }
+
+        /* Front face default configuration */
+        .card-front {
+          z-index: 2;
+          transform: rotateX(0deg);
+        }
+
+        /* Back face starts pre-rotated face down and flipped so text reads normally on hover */
+        .card-back {
+          transform: rotateX(180deg);
+          z-index: 1;
+        }
+
+        /* Auto-flip sequences disabled to fulfill user hover-only request */
+        .animate-flip-seq-1,
+        .animate-flip-seq-2,
+        .animate-flip-seq-3,
+        .animate-flip-seq-4,
+        .animate-flip-seq-5,
+        .animate-flip-seq-6 { 
+          animation: none !important; 
+        }
+
+        /* Trigger vertical flip and scale state safely on direct user hover */
+        .flippable-card:hover {
+          transform: rotateX(180deg) scale(1.02);
+          background-color: rgba(24, 24, 27, 0.8) !important;
+          border-color: #3f3f46 !important;
+          /* Quick switch transition into hover mode */
+          transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s, background-color 0.3s;
+        }
+
+        /* Prevent inner elements from stealing pointer focus mid-flip */
+        .flippable-card * {
+          pointer-events: none;
+        }
+
+        /* Force high clarity visual variables when user manually hovers over components */
+        .flippable-card:hover .card-back div:first-of-type {
+          background-color: #4f39f6 !important;
+          color: #ffffff !important;
+        }
+
+        .flippable-card:hover .card-back span:last-of-type {
+          color: #ffffff !important;
+        }
+      `}</style>
+
       {/* Background Ornaments */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-[#4f39f6]/10 via-[#60a5fa]/10 to-transparent rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[600px] h-[600px] bg-gradient-to-br from-[#ffed4a]/5 via-[#60a5fa]/10 to-[#4f39f6]/5 rounded-full blur-3xl pointer-events-none" />
@@ -31,71 +118,149 @@ export default function Contact() {
             </div>
 
             {/* Right Links Column */}
-            <div className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-200 lg:col-span-7 grid sm:grid-cols-2 gap-4 w-full">
+            <div className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-200 lg:col-span-7 grid sm:grid-cols-2 gap-4 w-full perspective-container">
               
               {/* Personal Email */}
-              <a href="mailto:saikatpatra300@gmail.com" className="group flex flex-col justify-between p-5 bg-zinc-900/40 border border-zinc-850 rounded-2xl hover:border-zinc-700 hover:bg-zinc-900/80 transition-all duration-300 min-h-[140px]">
-                <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl group-hover:bg-[#4f39f6] group-hover:text-white transition-colors duration-300 text-zinc-400 text-lg">
-                  <i className="bi bi-envelope"></i>
+              <a href="mailto:saikatpatra300@gmail.com" className="flippable-card animate-flip-seq-1 group bg-zinc-900/40 border border-zinc-850 rounded-2xl hover:border-zinc-700 hover:bg-zinc-900/80 transition-all duration-300 min-h-[140px]">
+                {/* Front Side */}
+                <div className="card-front">
+                  <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg">
+                    <i className="bi bi-envelope"></i>
+                  </div>
+                  <div>
+                    <span className="block text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">Personal Email</span>
+                    <span className="block text-sm font-medium text-zinc-300 truncate">saikatpatra300@gmail.com</span>
+                  </div>
                 </div>
-                <div>
-                  <span className="block text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">Personal Email</span>
-                  <span className="block text-sm font-medium text-zinc-300 group-hover:text-white transition-colors truncate">saikatpatra300@gmail.com</span>
+                {/* Back Side */}
+                <div className="card-back">
+                  <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg">
+                    <i className="bi bi-envelope"></i>
+                  </div>
+                  <div>
+                    <span className="block text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">Personal Email</span>
+                    <span className="block text-sm font-medium text-zinc-300 truncate">saikatpatra300@gmail.com</span>
+                  </div>
                 </div>
               </a>
 
               {/* Office Email */}
-              <a href="mailto:saikatpatraoffice@gmail.com" className="group flex flex-col justify-between p-5 bg-zinc-900/40 border border-zinc-850 rounded-2xl hover:border-zinc-700 hover:bg-zinc-900/80 transition-all duration-300 min-h-[140px]">
-                <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl group-hover:bg-[#4f39f6] group-hover:text-white transition-colors duration-300 text-zinc-400 text-lg">
-                  <i className="bi bi-envelope-at"></i>
+              <a href="mailto:saikatpatraoffice@gmail.com" className="flippable-card animate-flip-seq-2 group bg-zinc-900/40 border border-zinc-850 rounded-2xl hover:border-zinc-700 hover:bg-zinc-900/80 transition-all duration-300 min-h-[140px]">
+                {/* Front Side */}
+                <div className="card-front">
+                  <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg">
+                    <i className="bi bi-envelope-at"></i>
+                  </div>
+                  <div>
+                    <span className="block text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">Office Email</span>
+                    <span className="block text-sm font-medium text-zinc-300 truncate">saikatpatraoffice@gmail.com</span>
+                  </div>
                 </div>
-                <div>
-                  <span className="block text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">Office Email</span>
-                  <span className="block text-sm font-medium text-zinc-300 group-hover:text-white transition-colors truncate">saikatpatraoffice@gmail.com</span>
+                {/* Back Side */}
+                <div className="card-back">
+                  <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg">
+                    <i className="bi bi-envelope-at"></i>
+                  </div>
+                  <div>
+                    <span className="block text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">Office Email</span>
+                    <span className="block text-sm font-medium text-zinc-300 truncate">saikatpatraoffice@gmail.com</span>
+                  </div>
                 </div>
               </a>
 
               {/* LinkedIn */}
-              <a href="https://www.linkedin.com/in/saikat-patra-web-developer" rel="noopener noreferrer" target="_blank" className="group flex flex-col justify-between p-5 bg-zinc-900/40 border border-zinc-850 rounded-2xl hover:border-zinc-700 hover:bg-zinc-900/80 transition-all duration-300 min-h-[140px]">
-                <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl group-hover:bg-[#4f39f6] group-hover:text-white transition-colors duration-300 text-zinc-400 text-lg">
-                  <i className="bi bi-linkedin"></i>
+              <a href="https://www.linkedin.com/in/saikat-patra-web-developer" rel="noopener noreferrer" target="_blank" className="flippable-card animate-flip-seq-3 group bg-zinc-900/40 border border-zinc-850 rounded-2xl hover:border-zinc-700 hover:bg-zinc-900/80 transition-all duration-300 min-h-[140px]">
+                {/* Front Side */}
+                <div className="card-front">
+                  <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg">
+                    <i className="bi bi-linkedin"></i>
+                  </div>
+                  <div>
+                    <span className="block text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">Connect</span>
+                    <span className="block text-sm font-medium text-zinc-300 truncate">saikat-patra-web-developer</span>
+                  </div>
                 </div>
-                <div>
-                  <span className="block text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">Connect</span>
-                  <span className="block text-sm font-medium text-zinc-300 group-hover:text-white transition-colors truncate">saikat-patra-web-developer</span>
+                {/* Back Side */}
+                <div className="card-back">
+                  <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg">
+                    <i className="bi bi-linkedin"></i>
+                  </div>
+                  <div>
+                    <span className="block text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">Connect</span>
+                    <span className="block text-sm font-medium text-zinc-300 truncate">saikat-patra-web-developer</span>
+                  </div>
                 </div>
               </a>
 
               {/* GitHub */}
-              <a href="https://github.com/saikat-patra-web-developer" rel="noopener noreferrer" target="_blank" className="group flex flex-col justify-between p-5 bg-zinc-900/40 border border-zinc-850 rounded-2xl hover:border-zinc-700 hover:bg-zinc-900/80 transition-all duration-300 min-h-[140px]">
-                <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl group-hover:bg-[#4f39f6] group-hover:text-white transition-colors duration-300 text-zinc-400 text-lg">
-                  <i className="bi bi-github"></i>
+              <a href="https://github.com/saikat-patra-web-developer" rel="noopener noreferrer" target="_blank" className="flippable-card animate-flip-seq-4 group bg-zinc-900/40 border border-zinc-850 rounded-2xl hover:border-zinc-700 hover:bg-zinc-900/80 transition-all duration-300 min-h-[140px]">
+                {/* Front Side */}
+                <div className="card-front">
+                  <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg">
+                    <i className="bi bi-github"></i>
+                  </div>
+                  <div>
+                    <span className="block text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">Repositories</span>
+                    <span className="block text-sm font-medium text-zinc-300 truncate">saikat-patra-web-developer</span>
+                  </div>
                 </div>
-                <div>
-                  <span className="block text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">Repositories</span>
-                  <span className="block text-sm font-medium text-zinc-300 group-hover:text-white transition-colors truncate">saikat-patra-web-developer</span>
+                {/* Back Side */}
+                <div className="card-back">
+                  <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg">
+                    <i className="bi bi-github"></i>
+                  </div>
+                  <div>
+                    <span className="block text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">Repositories</span>
+                    <span className="block text-sm font-medium text-zinc-300 truncate">saikat-patra-web-developer</span>
+                  </div>
                 </div>
               </a>
 
               {/* WhatsApp Primary */}
-              <a href="https://wa.me/919038909382" rel="noopener noreferrer" target="_blank" className="group flex flex-col justify-between p-5 bg-zinc-900/40 border border-zinc-850 rounded-2xl hover:border-zinc-700 hover:bg-zinc-900/80 transition-all duration-300 min-h-[140px]">
-                <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl group-hover:bg-[#4f39f6] group-hover:text-white transition-colors duration-300 text-zinc-400 text-lg">
-                  <i className="bi bi-whatsapp"></i>
+              <a href="https://wa.me/919038909382" rel="noopener noreferrer" target="_blank" className="flippable-card animate-flip-seq-5 group bg-zinc-900/40 border border-zinc-850 rounded-2xl hover:border-zinc-700 hover:bg-zinc-900/80 transition-all duration-300 min-h-[140px]">
+                {/* Front Side */}
+                <div className="card-front">
+                  <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg">
+                    <i className="bi bi-whatsapp"></i>
+                  </div>
+                  <div>
+                    <span className="block text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">Primary Chat</span>
+                    <span className="block text-sm font-medium text-zinc-300 truncate">+91 90389 09382</span>
+                  </div>
                 </div>
-                <div>
-                  <span className="block text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">Primary Chat</span>
-                  <span className="block text-sm font-medium text-zinc-300 group-hover:text-white transition-colors truncate">+91 90389 09382</span>
+                {/* Back Side */}
+                <div className="card-back">
+                  <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg">
+                    <i className="bi bi-whatsapp"></i>
+                  </div>
+                  <div>
+                    <span className="block text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">Primary Chat</span>
+                    <span className="block text-sm font-medium text-zinc-300 truncate">+91 90389 09382</span>
+                  </div>
                 </div>
               </a>
 
               {/* WhatsApp Secondary */}
-              <a href="https://wa.me/918902273136" rel="noopener noreferrer" target="_blank" className="group flex flex-col justify-between p-5 bg-zinc-900/40 border border-zinc-850 rounded-2xl hover:border-zinc-700 hover:bg-zinc-900/80 transition-all duration-300 min-h-[140px]">
-                <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl group-hover:bg-[#4f39f6] group-hover:text-white transition-colors duration-300 text-zinc-400 text-lg">
-                  <i className="bi bi-whatsapp"></i>
+              <a href="https://wa.me/918902273136" rel="noopener noreferrer" target="_blank" className="flippable-card animate-flip-seq-6 group bg-zinc-900/40 border border-zinc-850 rounded-2xl hover:border-zinc-700 hover:bg-zinc-900/80 transition-all duration-300 min-h-[140px]">
+                {/* Front Side */}
+                <div className="card-front">
+                  <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg">
+                    <i className="bi bi-whatsapp"></i>
+                  </div>
+                  <div>
+                    <span className="block text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">Secondary Chat</span>
+                    <span className="block text-sm font-medium text-zinc-300 truncate">+91 89022 73136</span>
+                  </div>
                 </div>
-                <div>
-                  <span className="block text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">Secondary Chat</span>
-                  <span className="block text-sm font-medium text-zinc-300 group-hover:text-white transition-colors truncate">+91 89022 73136</span>
+                {/* Back Side */}
+                <div className="card-back">
+                  <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg">
+                    <i className="bi bi-whatsapp"></i>
+                  </div>
+                  <div>
+                    <span className="block text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">Secondary Chat</span>
+                    <span className="block text-sm font-medium text-zinc-300 truncate">+91 89022 73136</span>
+                  </div>
                 </div>
               </a>
 
