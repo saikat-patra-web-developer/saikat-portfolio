@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center pt-24 pb-12 sm:pt-28 sm:pb-16 md:pt-32 md:pb-24 overflow-hidden bg-white selection:bg-indigo-500/30">
       {/* Background Blobs */}
-      <div className="absolute top-10 right-[-10%] w-[280px] h-[280px] sm:w-[500px] sm:h-[500px] lg:w-[600px] lg:h-[600px] bg-gradient-to-tr from-indigo-500/20 to-purple-500/0 rounded-full blur-[60px] sm:blur-[120px] pointer-events-none animate-[pulse_8s_infinite_ease-in-out]" aria-hidden="true"></div>
+      <div className="absolute top-10 right-[-10%] w-[280px] h-[280px] sm:w-[500px] sm:h-[500px] lg:w-[600px] lg:h-[600px] bg-gradient-to-tr from-indigo-50/20 to-purple-500/0 rounded-full blur-[60px] sm:blur-[120px] pointer-events-none animate-[pulse_8s_infinite_ease-in-out]" aria-hidden="true"></div>
       <div className="absolute bottom-10 left-[-10%] w-[200px] h-[200px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] bg-zinc-200/50 rounded-full blur-[50px] sm:blur-[100px] pointer-events-none animate-[pulse_10s_infinite_ease-in-out_1s]" aria-hidden="true"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -24,7 +24,6 @@ export default function Hero() {
             {/* Value-Driven Headline */}
             <h1 className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-75 font-sans font-black text-3xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl leading-[1.15] sm:leading-[1.05] tracking-tight text-zinc-900 mb-5 sm:mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-tr from-[#4f39f6] via-[#38bdf8] to-[#94a3b8] bg-[size:200%_auto] animate-[shine_5s_linear_infinite]">Custom Software</span> That Helps Your Business Grow
-              
             </h1>
 
             {/* Clear & Condensed Benefit Sub-Headline */}
@@ -43,19 +42,133 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Prominent Trust Section */}
-            <div className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-300 grid grid-cols-3 gap-2 sm:gap-8 lg:gap-10 mt-10 sm:mt-16 pt-6 sm:pt-10 border-t border-zinc-100">
-              <div className="group/stat cursor-default">
-                <p className="font-sans font-black text-2xl sm:text-4xl md:text-5xl text-zinc-900 tracking-tight group-hover/stat:text-[#4f39f6] transition-colors duration-300">34+</p>
-                <p className="text-[10px] sm:text-sm font-bold text-zinc-500 mt-1 sm:mt-1.5 leading-tight">Completed Projects</p>
+            {/* Prominent Trust Section (Fixed Text Mirroring Bug) */}
+            <div className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-300 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5 mt-10 sm:mt-16 pt-6 sm:pt-10 border-t border-zinc-100">
+              {/* Injected Style Block for HD 3D Flipping Animation */}
+              <style dangerouslySetInnerHTML={{__html: `
+                @keyframes continuousFlip3D {
+                  0%, 15% {
+                    transform: rotateY(0deg);
+                  }
+                  40%, 60% {
+                    transform: rotateY(180deg);
+                  }
+                  85%, 100% {
+                    transform: rotateY(360deg);
+                  }
+                }
+                .flip-container {
+                  perspective: 1600px;
+                  height: 90px;
+                }
+                @media (min-width: 640px) {
+                  .flip-container {
+                    height: 110px;
+                  }
+                }
+                .flip-card-inner {
+                  position: relative;
+                  width: 100%;
+                  height: 100%;
+                  text-align: center;
+                  transform-style: preserve-3d;
+                  animation: continuousFlip3D 6s infinite cubic-bezier(0.7, 0, 0.2, 1);
+                }
+                .flip-card-front, .flip-card-back {
+                  position: absolute;
+                  width: 100%;
+                  height: 100%;
+                  -webkit-backface-visibility: hidden;
+                  backface-visibility: hidden;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  border-radius: 1.25rem;
+                  padding: 0.75rem;
+                }
+                /* Deep Cinematic Popout Effect */
+                .flip-card-front * {
+                  transform: translateZ(45px);
+                  transform-style: preserve-3d;
+                }
+                /* Fixed Mirroring: Content inside back face is rotated 180deg to compensate for the card container's flip */
+                .flip-card-back * {
+                  transform: translateZ(45px) rotateY(180deg);
+                  transform-style: preserve-3d;
+                }
+                .flip-card-back {
+                  transform: rotateY(180deg);
+                }
+              `}} />
+
+              {/* Card 1 */}
+              <div className="flip-container">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front bg-gradient-to-br from-indigo-50/90 via-white to-indigo-50/40 border-[1.5px] border-indigo-200/50 shadow-[0_20px_40px_-10px_rgba(79,57,246,0.18),0_10px_20px_-8px_rgba(79,57,246,0.1),inset_0_1px_2px_rgba(255,255,255,0.8)]">
+                    <p className="font-sans font-black text-2xl sm:text-3xl md:text-4xl text-[#4f39f6] tracking-tight drop-shadow-[0_2px_4px_rgba(79,57,246,0.1)]">34+</p>
+                    <p className="text-[10px] sm:text-xs font-bold text-zinc-600 mt-0.5 sm:mt-1 leading-tight">Completed Projects</p>
+                  </div>
+                  <div className="flip-card-back bg-gradient-to-br from-[#4f39f6] via-[#432ff2] to-[#2c1cb8] border-[1.5px] border-[#3724db] shadow-[0_20px_45px_-10px_rgba(79,57,246,0.45),inset_0_1px_3px_rgba(255,255,255,0.3)] text-white">
+                    <div>
+                      <p className="font-sans font-black text-base sm:text-lg leading-tight tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.25)]">100% Done</p>
+                      <p className="text-[9px] sm:text-[10px] font-medium text-indigo-100 mt-1 leading-tight">On-Time Delivery</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="group/stat cursor-default">
-                <p className="font-sans font-black text-2xl sm:text-4xl md:text-5xl text-zinc-900 tracking-tight group-hover/stat:text-[#4f39f6] transition-colors duration-300">21+</p>
-                <p className="text-[10px] sm:text-sm font-bold text-zinc-500 mt-1 sm:mt-1.5 leading-tight">Happy Clients</p>
+              
+              {/* Card 2 */}
+              <div className="flip-container">
+                <div className="flip-card-inner" style={{ animationDelay: '0.5s' }}>
+                  <div className="flip-card-front bg-gradient-to-br from-emerald-50/90 via-white to-emerald-50/40 border-[1.5px] border-emerald-200/50 shadow-[0_20px_40px_-10px_rgba(16,185,129,0.18),0_10px_20px_-8px_rgba(16,185,129,0.1),inset_0_1px_2px_rgba(255,255,255,0.8)]">
+                    <p className="font-sans font-black text-2xl sm:text-3xl md:text-4xl text-emerald-600 tracking-tight drop-shadow-[0_2px_4px_rgba(16,185,129,0.1)]">21+</p>
+                    <p className="text-[10px] sm:text-xs font-bold text-zinc-600 mt-0.5 sm:mt-1 leading-tight">Happy Clients</p>
+                  </div>
+                  <div className="flip-card-back bg-gradient-to-br from-emerald-600 via-emerald-600 to-emerald-800 border-[1.5px] border-emerald-700 shadow-[0_20px_45px_-10px_rgba(16,185,129,0.45),inset_0_1px_3px_rgba(255,255,255,0.3)] text-white">
+                    <div>
+                      <p className="font-sans font-black text-base sm:text-lg leading-tight tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.25)]">Global Trust</p>
+                      <p className="text-[9px] sm:text-[10px] font-medium text-emerald-100 mt-1 leading-tight">Worldwide Retention</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="group/stat cursor-default">
-                <p className="font-sans font-black text-2xl sm:text-4xl md:text-5xl text-zinc-900 tracking-tight group-hover/stat:text-[#4f39f6] transition-colors duration-300">7+</p>
-                <p className="text-[10px] sm:text-sm font-bold text-zinc-500 mt-1 sm:mt-1.5 leading-tight">Years Experience</p>
+              
+              {/* Card 3 */}
+              <div className="flip-container">
+                <div className="flip-card-inner" style={{ animationDelay: '1s' }}>
+                  <div className="flip-card-front bg-gradient-to-br from-purple-50/90 via-white to-purple-50/40 border-[1.5px] border-purple-200/50 shadow-[0_20px_40px_-10px_rgba(147,51,234,0.18),0_10px_20px_-8px_rgba(147,51,234,0.1),inset_0_1px_2px_rgba(255,255,255,0.8)]">
+                    <p className="font-sans font-black text-2xl sm:text-3xl md:text-4xl text-purple-600 tracking-tight drop-shadow-[0_2px_4px_rgba(147,51,234,0.1)]">7+</p>
+                    <p className="text-[10px] sm:text-xs font-bold text-zinc-600 mt-0.5 sm:mt-1 leading-tight">Years Experience</p>
+                  </div>
+                  <div className="flip-card-back bg-gradient-to-br from-purple-600 via-purple-600 to-purple-800 border-[1.5px] border-purple-700 shadow-[0_20px_45px_-10px_rgba(147,51,234,0.45),inset_0_1px_3px_rgba(255,255,255,0.3)] text-white">
+                    <div>
+                      <p className="font-sans font-black text-base sm:text-lg leading-tight tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.25)]">Full Stack</p>
+                      <p className="text-[9px] sm:text-[10px] font-medium text-purple-100 mt-1 leading-tight">Expert Engineering</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 4 */}
+              <div className="flip-container">
+                <div className="flip-card-inner" style={{ animationDelay: '1.5s' }}>
+                  <div className="flip-card-front bg-gradient-to-br from-amber-50/90 via-white to-amber-50/40 border-[1.5px] border-amber-200/50 shadow-[0_20px_40px_-10px_rgba(245,158,11,0.18),0_10px_20px_-8px_rgba(245,158,11,0.1),inset_0_1px_2px_rgba(255,255,255,0.8)]">
+                    <p className="font-sans font-black text-2xl sm:text-3xl md:text-4xl text-amber-600 tracking-tight flex items-center gap-1 drop-shadow-[0_2px_4px_rgba(245,158,11,0.1)]">
+                      4.9
+                      <Star className="w-4 h-4 sm:w-5 sm:h-5 fill-amber-500 text-amber-500 inline" />
+                    </p>
+                    <p className="text-[10px] sm:text-xs font-bold text-zinc-600 mt-0.5 sm:mt-1 leading-tight">Google Review</p>
+                  </div>
+                  <div className="flip-card-back bg-gradient-to-br from-amber-500 via-amber-500 to-amber-600 border-[1.5px] border-amber-600 shadow-[0_20px_45px_-10px_rgba(245,158,11,0.45),inset_0_1px_3px_rgba(255,255,255,0.3)] text-white">
+                    <div>
+                      <p className="font-sans font-black text-base sm:text-lg leading-tight tracking-wide flex items-center justify-center gap-0.5 drop-shadow-[0_2px_4px_rgba(0,0,0,0.25)]">
+                        5.0 <Star className="w-3.5 h-3.5 fill-white text-white inline" />
+                      </p>
+                      <p className="text-[9px] sm:text-[10px] font-medium text-amber-50 mt-1 leading-tight">Top Rated Quality</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
