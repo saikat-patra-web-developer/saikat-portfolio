@@ -198,9 +198,11 @@ export default function Hero() {
                 />
               </div>
 
-              {/* Floating Badges */}
-              <div className="absolute -top-2 -left-2 sm:-left-6 bg-white border border-zinc-100 p-2 sm:p-4 rounded-xl sm:rounded-2xl shadow-[0_15px_35px_rgba(0,0,0,0.05)] flex items-center gap-1.5 sm:gap-3 animate-[bounce_4s_infinite_ease-in-out]">
-                <div className="w-6 h-6 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#4f39f6]/10 flex items-center justify-center text-[#4f39f6]">
+              {/* Floating Badges (With Added HD Cinematic 3D Shadow & Border Highlights) */}
+              
+              {/* Badge 1: Completed Projects */}
+              <div className="absolute -top-2 -left-2 sm:-left-6 bg-white border border-zinc-100/80 p-2 sm:p-4 rounded-xl sm:rounded-2xl shadow-[0_20px_50px_rgba(79,57,246,0.15),0_10px_20px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.9)] hover:shadow-[0_30px_60px_rgba(79,57,246,0.25),0_12px_24px_rgba(0,0,0,0.08)] [transform:perspective(800px)_translateZ(20px)] transition-all duration-300 flex items-center gap-1.5 sm:gap-3 animate-[bounce_2s_infinite_ease-in-out]">
+                <div className="w-6 h-6 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#4f39f6]/10 flex items-center justify-center text-[#4f39f6] shadow-[inset_0_1px_2px_rgba(79,57,246,0.15)]">
                   <FileText className="w-3.5 h-3.5 sm:w-5 sm:h-5" strokeWidth={2} />
                 </div>
                 <div>
@@ -209,8 +211,9 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="absolute top-1/4 -right-2 sm:-right-8 bg-white border border-zinc-100 p-2 sm:p-4 rounded-xl sm:rounded-2xl shadow-[0_15px_35px_rgba(0,0,0,0.05)] flex items-center gap-1.5 sm:gap-3 animate-[bounce_4s_infinite_ease-in-out_1s]">
-                <div className="w-6 h-6 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-500">
+              {/* Badge 2: Satisfaction */}
+              <div className="absolute top-1/4 -right-2 sm:-right-8 bg-white border border-zinc-100/80 p-2 sm:p-4 rounded-xl sm:rounded-2xl shadow-[0_20px_50px_rgba(245,158,11,0.15),0_10px_20px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.9)] hover:shadow-[0_30px_60px_rgba(245,158,11,0.25),0_12px_24px_rgba(0,0,0,0.08)] [transform:perspective(800px)_translateZ(20px)] transition-all duration-300 flex items-center gap-1.5 sm:gap-3 animate-[bounce_2s_infinite_ease-in-out_1s]">
+                <div className="w-6 h-6 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-500 shadow-[inset_0_1px_2px_rgba(245,158,11,0.15)]">
                   <Star className="w-3.5 h-3.5 sm:w-5 sm:h-5 fill-current" strokeWidth={2} />
                 </div>
                 <div>
@@ -219,8 +222,9 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="absolute -bottom-4 bg-white border border-zinc-100 p-2 sm:p-4 rounded-xl sm:rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.06)] flex items-center gap-2 sm:gap-4 min-w-[140px] sm:min-w-[220px] animate-[bounce_5s_infinite_ease-in-out_0.5s]">
-                <div className="w-7 h-7 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-purple-100 flex items-center justify-center text-purple-600 shrink-0">
+              {/* Badge 3: Full Stack Developer */}
+              <div className="absolute -bottom-4 bg-white border border-zinc-100/85 p-2 sm:p-4 rounded-xl sm:rounded-2xl shadow-[0_25px_55px_rgba(147,51,234,0.18),0_12px_24px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.95)] hover:shadow-[0_35px_65px_rgba(147,51,234,0.28),0_15px_28px_rgba(0,0,0,0.09)] [transform:perspective(800px)_translateZ(30px)] transition-all duration-300 flex items-center gap-2 sm:gap-4 min-w-[140px] sm:min-w-[220px] animate-[bounce_2s_infinite_ease-in-out_0.5s]">
+                <div className="w-7 h-7 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-purple-100 flex items-center justify-center text-purple-600 shrink-0 shadow-[inset_0_1px_2px_rgba(147,51,234,0.15)]">
                   <User className="w-3.5 h-3.5 sm:w-5 sm:h-5" strokeWidth={2} />
                 </div>
                 <div>
