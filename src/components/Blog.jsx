@@ -69,7 +69,5 @@ export default function Blog() {
         </div>
       </div>
     </section>
-
-    
   );
 }
