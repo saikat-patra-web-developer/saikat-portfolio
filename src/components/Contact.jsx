@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-28 bg-[#fafafa] overflow-hidden border-t border-b border-zinc-100">
+    <section id="contact" className="relative py-24 bg-gradient-to-b from-white via-zinc-50/30 to-white overflow-hidden">
       <style>{`
         .perspective-container {
           perspective: 1000px;
@@ -65,11 +65,6 @@ export default function Contact() {
           border-color: #4f39f6 !important;
         }
       `}</style>
-
-      {/* Ambient background patterns */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-[#4f39f6]/10 via-[#60a5fa]/10 to-transparent rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-[600px] h-[600px] bg-gradient-to-br from-[#ffed4a]/5 via-[#60a5fa]/10 to-[#4f39f6]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-40 pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-zinc-950 rounded-[2.5rem] p-10 md:p-16 relative overflow-hidden border border-zinc-900 shadow-2xl">

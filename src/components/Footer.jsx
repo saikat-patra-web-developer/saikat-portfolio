@@ -2,8 +2,25 @@ import React from 'react';
 
 export default function Footer({ currentYear }) {
   return (
-    <footer className="border-t border-zinc-200/60 bg-zinc-50/50">
-      <div className="max-w-7xl mx-auto px-6 py-12">
+    <footer className="relative overflow-hidden border-t border-zinc-200/60 bg-[#fafafa]">
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes float-orbit {
+          0% { transform: rotate(0deg) translateY(var(--orbit-radius, 120px)) rotate(0deg) scale(0.9); z-index: 1; }
+          25% { z-index: 5; transform: rotate(90deg) translateY(var(--orbit-radius, 120px)) rotate(-90deg) scale(0.95); }
+          50% { transform: rotate(180deg) translateY(var(--orbit-radius, 120px)) rotate(-180deg) scale(0.9); z-index: 1; }
+          75% { transform: rotate(270deg) translateY(var(--orbit-radius, 120px)) rotate(-270deg) scale(0.7); z-index: 1; }
+          100% { transform: rotate(360deg) translateY(var(--orbit-radius, 120px)) rotate(-360deg) scale(0.9); z-index: 1; }
+        }
+        .orbiting-skill { animation: float-orbit var(--orbit-duration, 25s) linear infinite; }
+        .orbiting-skill:hover { animation-play-state: paused; }
+      `}} />
+
+      {/* Background Blurs transferred from About */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-[#4f39f6]/10 via-[#60a5fa]/10 to-transparent rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-[600px] h-[600px] bg-gradient-to-br from-[#ffed4a]/5 via-[#60a5fa]/10 to-[#4f39f6]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-40 pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-6 py-12 z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 border-b border-zinc-200/60 pb-8 mb-8">
           {/* Pitch / Positioning */}
           <div className="text-center md:text-left">
