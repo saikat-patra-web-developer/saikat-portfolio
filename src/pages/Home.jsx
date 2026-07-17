@@ -5,8 +5,8 @@ import Services from '../components/Services';
 import Portfolio from '../components/Portfolio';
 import About from '../components/About';
 import Reviews from '../components/Reviews';
-import HowWeWork from '../components/HowWeWork';
-import Blog from '../components/HowWeWork';
+import Workflow from '../components/Workflow';
+import Blog from '../components/Workflow';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
@@ -23,7 +23,7 @@ export default function Home() {
         setActiveSection('contact');
         return;
       }
-      const sections = ['contact', 'blog', 'about', 'reviews',  'portfolio', 'HowWeWork', 'services', 'hero'];
+      const sections = ['contact', 'blog', 'about', 'reviews',  'portfolio', 'workflow', 'services', 'hero'];
       for (const id of sections) {
         const el = document.getElementById(id);
         if (el && window.scrollY >= el.offsetTop - 130) {
@@ -66,7 +66,7 @@ export default function Home() {
         <main>
           <Hero />
           <Services />
-          <HowWeWork />
+          <Workflow />
           <Portfolio />
           <Reviews />
           <About />

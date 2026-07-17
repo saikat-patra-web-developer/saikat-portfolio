@@ -14,7 +14,7 @@ export default function NavBar({ mobileMenuOpen, setMobileMenuOpen, scrolled, ac
             </a>
           </div>
           <ul className="flex items-center gap-1 text-sm" role="list">
-            {['services', 'HowWeWork', 'portfolio', 'reviews', 'about', 'contact'].map((sec) => (
+            {['services', 'workflow', 'portfolio', 'reviews', 'about', 'contact'].map((sec) => (
               <li key={sec}>
                 <a 
                   href={`#${sec}`} 
@@ -109,7 +109,7 @@ export default function NavBar({ mobileMenuOpen, setMobileMenuOpen, scrolled, ac
             className="flex flex-col gap-6 text-xl font-semibold text-white px-4 relative z-50 pointer-events-auto" 
             role="list"
           >
-            {['services', 'HowWeWork', 'portfolio', 'reviews', 'about', 'contact'].map((sec, index) => (
+            {['services', 'workflow', 'portfolio', 'reviews', 'about', 'contact'].map((sec, index) => (
               <li 
                 key={sec}
                 style={{

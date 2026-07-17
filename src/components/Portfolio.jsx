@@ -2,8 +2,11 @@ import React from 'react';
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="portfolio" className="relative py-28 bg-zinc-50 border-t border-b border-zinc-100 overflow-hidden">
+      {/* Subtle Background Grid/Accent Layer to match your hero style */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30" />
+      
+      <div className="relative max-w-7xl mx-auto px-6">
         
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
@@ -33,7 +36,7 @@ export default function Portfolio() {
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 items-start mb-16">
           
           {/* Project 1: Quote My Blinds */}
-          <article className="group/card rounded-3xl overflow-hidden bg-zinc-50 border border-zinc-200/60 hover:border-[#4f39f6] hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+          <article className="group/card rounded-3xl overflow-hidden bg-white border border-zinc-200/60 hover:border-[#4f39f6] hover:shadow-xl transition-all duration-300 flex flex-col h-full">
             <div className="overflow-hidden bg-zinc-200 aspect-video relative w-full">
               <img className="w-full h-full object-cover block transition-transform duration-700 ease-out group-hover/card:scale-[1.03]" src="./qmb.png" alt="Quote My Blinds Custom CRM" loading="lazy" />
               <a href="https://quotemyblinds.com/" target="_blank" rel="noopener noreferrer" className="absolute inset-0 bg-[#4f39f6]/20 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -54,7 +57,7 @@ export default function Portfolio() {
           </article>
 
           {/* Project 2: Purge Blinds */}
-          <article className="group/card rounded-3xl overflow-hidden bg-zinc-50 border border-zinc-200/60 hover:border-[#4f39f6] hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+          <article className="group/card rounded-3xl overflow-hidden bg-white border border-zinc-200/60 hover:border-[#4f39f6] hover:shadow-xl transition-all duration-300 flex flex-col h-full">
             <div className="overflow-hidden bg-zinc-200 aspect-video relative w-full">
               <img className="w-full h-full object-cover block transition-transform duration-700 ease-out group-hover/card:scale-[1.03]" src="./purge.png" alt="Purge Blinds Quote Portal" loading="lazy" />
               <a href="https://www.purge.co.nz/" target="_blank" rel="noopener noreferrer" className="absolute inset-0 bg-[#4f39f6]/20 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -75,7 +78,7 @@ export default function Portfolio() {
           </article>
 
           {/* Project 3: Dream Big Group */}
-          <article className="group/card rounded-3xl overflow-hidden bg-zinc-50 border border-zinc-200/60 hover:border-[#4f39f6] hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+          <article className="group/card rounded-3xl overflow-hidden bg-white border border-zinc-200/60 hover:border-[#4f39f6] hover:shadow-xl transition-all duration-300 flex flex-col h-full">
             <div className="overflow-hidden bg-zinc-200 aspect-video relative w-full">
               <img className="w-full h-full object-cover block transition-transform duration-700 ease-out group-hover/card:scale-[1.03]" src="./db.png" alt="Dream Big Group Portal" loading="lazy" />
               <a href="https://dreambiggroup.in/" target="_blank" rel="noopener noreferrer" className="absolute inset-0 bg-[#4f39f6]/20 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -98,7 +101,7 @@ export default function Portfolio() {
         </div>
 
         {/* Closing Inbound Lead Block */}
-        <div className="bg-zinc-50 rounded-3xl p-8 border border-zinc-200/60 text-center max-w-3xl mx-auto">
+        <div className="bg-white rounded-3xl p-8 border border-zinc-200/60 text-center max-w-3xl mx-auto relative z-10">
           <h4 className="font-sans font-bold text-xl text-zinc-900 mb-2">Need a high-performing backend system or custom CRM?</h4>
           <p className="text-xs text-zinc-500 mb-6 max-w-lg mx-auto">
             Whether it's complex business rules, automation logic, or dynamic database architecture—I can engineer the exact system your workflow needs to grow.
