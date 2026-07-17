@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default function Work() {
+export default function Portfolio() {
   return (
-    <section id="work" className="py-20 bg-white">
+    <section id="portfolio" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Header Section */}

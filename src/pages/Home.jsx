@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import NavBar from '../components/NavBar';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
-import Work from '../components/Work';
+import Portfolio from '../components/Portfolio';
 import About from '../components/About';
-import Reviews from '../components/Reviews';
+import Testimonials from '../components/Testimonials';
 import Blog from '../components/Blog';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
@@ -22,7 +22,7 @@ export default function Home() {
         setActiveSection('contact');
         return;
       }
-      const sections = ['contact', 'blog', 'reviews', 'about', 'work', 'services', 'hero'];
+      const sections = ['contact', 'blog', 'about', 'testimonials',  'portfolio', 'services', 'hero'];
       for (const id of sections) {
         const el = document.getElementById(id);
         if (el && window.scrollY >= el.offsetTop - 130) {
@@ -65,10 +65,9 @@ export default function Home() {
         <main>
           <Hero />
           <Services />
-          <Work />
+          <Portfolio />
+          <Testimonials />
           <About />
-          <Reviews />
-          {/* <Blog /> */}
           <Contact />
         </main>
         <Footer currentYear={currentYear} />
