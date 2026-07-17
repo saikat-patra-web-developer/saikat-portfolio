@@ -1,95 +1,113 @@
 import React from 'react';
 
 export default function Services() {
-  // Services organized logically by core business needs instead of loose technologies
+  // Services organized by high-value business outcomes to maximize lead generation
   const serviceGroups = [
     {
       groupTitle: "Custom Applications & Platforms",
-      groupSubtitle: "Scalable software engineered to automate your operations and drive revenue.",
+      groupSubtitle: "Engineered to automate your daily operations, eliminate overhead, and drive predictable revenue.",
       items: [
         {
           title: "SaaS & Product Development",
-          description: "Turn your software idea into a recurring revenue engine. I build production-ready cloud platforms with secure multi-tenant architectures, intuitive user dashboards, and automated subscription billing.",
+          description: "Turn your software idea into a recurring revenue engine. I build production-ready cloud platforms with secure multi-tenant architectures, intuitive user dashboards, and automated subscription billing designed to scale seamlessly.",
           icon: <i className="bi bi-layers" style={{ fontSize: '1.25rem' }}></i>,
           tag: "SaaS",
           isPopular: true,
-          projectLink: "#portfolio"
+          ctaText: "Validate Your Idea",
+          projectLink: "#contact",
+          metric: "Built for scale"
         },
         {
           title: "Custom CRM & Admin Panels",
-          description: "Eliminate operational bottlenecks. Custom-built workflows, interactive internal management hubs, and tailored administrative portals engineered specifically to map to your existing business rules.",
+          description: "Eliminate operational bottlenecks and manual spreadsheets. I build tailored administrative portals, custom booking engines, and interactive internal management hubs engineered to map perfectly to your business rules.",
           icon: <i className="bi bi-cpu" style={{ fontSize: '1.25rem' }}></i>,
           tag: "Operations",
           isPopular: true,
-          projectLink: "#portfolio"
+          ctaText: "Automate Workflows",
+          projectLink: "#portfolio",
+          metric: "Proven logic architectures"
         },
         {
           title: "E-commerce Engineering",
-          description: "Maximize digital checkout conversions. High-performance storefronts featuring fluid user journeys, optimized catalog systems, and secure global payment integrations that turn browsers into buyers.",
+          description: "Maximize checkout conversions and stop losing customers. High-performance storefronts featuring fluid user journeys, lightning-fast catalog systems, and secure global payment integrations that turn casual browsers into buyers.",
           icon: <i className="bi bi-bag" style={{ fontSize: '1.25rem' }}></i>,
           tag: "E-com",
           isPopular: true,
-          projectLink: "#portfolio"
+          ctaText: "Maximize Conversions",
+          projectLink: "#portfolio",
+          metric: "Optimized checkout flows"
         }
       ]
     },
     {
       groupTitle: "High-Performance Integrations",
-      groupSubtitle: "Connecting systems and leveraging intelligence to maximize efficiency.",
+      groupSubtitle: "Connecting business infrastructure to multiply team efficiency and leverage intelligence.",
       items: [
         {
           title: "API & Workflow Automation",
-          description: "Streamline workflows, eradicate manual data entry, and unify your fragmented business applications by connecting your internal systems with external platforms securely.",
+          description: "Streamline communication, eradicate manual data entry, and unify fragmented business applications by securely connecting your internal CRM, payment workflows, and external third-party tools.",
           icon: <i className="bi bi-link-45deg" style={{ fontSize: '1.25rem' }}></i>,
           tag: "Integration",
           isPopular: false,
-          projectLink: null
+          ctaText: "Connect Systems",
+          projectLink: "#contact",
+          metric: "Zero manual friction"
         },
         {
           title: "AI Integration & Automation",
-          description: "Inject intelligent capabilities straight into your software stack. Deploy tailored internal search tools, context-aware AI assistants, and smart data processing models that save hours of human labor.",
+          description: "Inject intelligent capabilities straight into your software stack. Deploy tailored internal search tools, context-aware AI assistants, and smart data processing models that save hundreds of hours of human labor.",
           icon: <i className="bi bi-cpu-fill" style={{ fontSize: '1.25rem' }}></i>,
           tag: "AI & Data",
           isPopular: false,
-          projectLink: null
+          ctaText: "Deploy Smart Tools",
+          projectLink: "#contact",
+          metric: "Drastically reduce hours"
         },
         {
           title: "Mobile App Development",
-          description: "Expand your market reach onto customer home screens. Build fluid, reliable cross-platform mobile apps for iOS and Android optimized for user accounts, scheduling, and on-the-go utility.",
+          description: "Expand your market reach onto customer home screens. Build fluid, reliable cross-platform mobile apps for iOS and Android optimized for user accounts, real-time scheduling, and on-the-go utility.",
           icon: <i className="bi bi-phone" style={{ fontSize: '1.25rem' }}></i>,
           tag: "Mobile",
           isPopular: false,
-          projectLink: null
+          ctaText: "Launch Your App",
+          projectLink: "#contact",
+          metric: "iOS & Android ready"
         }
       ]
     },
     {
       groupTitle: "Digital Frontends & Growth",
-      groupSubtitle: "Ultra-fast, beautifully designed web interfaces optimized to capture leads.",
+      groupSubtitle: "Ultra-fast, beautifully designed web interfaces engineered to systematically capture high-intent leads.",
       items: [
         {
           title: "Growth-Driven Web Development",
-          description: "Transform your first impression. Fast, secure, and fully responsive web experiences custom-designed to tell your story, capture high-intent leads, and convert traffic seamlessly.",
+          description: "Transform your brand's digital first impression. Fast, secure, and fully responsive web experiences custom-designed to tell your story, build immediate authority, and capture inbound client leads flawlessly.",
           icon: <i className="bi bi-globe" style={{ fontSize: '1.25rem' }}></i>,
           tag: "Websites",
           isPopular: false,
-          projectLink: null
+          ctaText: "Capture More Leads",
+          projectLink: "#contact",
+          metric: "Built to convert"
         },
         {
           title: "Interactive User Interfaces",
-          description: "Deliver smooth, lightning-fast application dynamics. Utilizing reusable modern frontend systems to construct lightning-quick interfaces that keep users deeply engaged.",
+          description: "Deliver ultra-smooth, lightning-fast interactive dynamics. Utilizing modular, reusable frontend systems to construct modern components that maximize user retention and keep clients deeply engaged.",
           icon: <i className="bi bi-filetype-jsx" style={{ fontSize: '1.25rem' }}></i>,
           tag: "Frontend",
           isPopular: false,
-          projectLink: null
+          ctaText: "Upgrade UX",
+          projectLink: "#contact",
+          metric: "Lightning-fast performance"
         },
         {
           title: "SEO-Optimized Platforms",
-          description: "Outrank your competition out of the box. Deploying server-rendered architectures that deliver blazing speed performance metrics and structural layouts Google algorithms favor.",
+          description: "Outrank your competition out of the box. Deploying production-grade server-rendered architectures that deliver blazing speed performance metrics and structural layouts that search engine algorithms reward.",
           icon: <i className="bi bi-boxes" style={{ fontSize: '1.25rem' }}></i>,
           tag: "Fullstack",
           isPopular: false,
-          projectLink: null
+          ctaText: "Dominate Search",
+          projectLink: "#contact",
+          metric: "Core Web Vitals optimized"
         }
       ]
     },
@@ -99,19 +117,23 @@ export default function Services() {
       items: [
         {
           title: "Managed Cloud & DevOps",
-          description: "Rest easy knowing your critical systems are safe. Architecting secure, production-grade cloud environments featuring continuous monitoring, automated snapshots, and heavy-duty SSL protection.",
+          description: "Rest easy knowing your critical business operations are safe. Architecting secure, production-grade cloud environments featuring continuous monitoring, automated backups, and heavy-duty data encryption.",
           icon: <i className="bi bi-cloud-lightning" style={{ fontSize: '1.25rem' }}></i>,
           tag: "DevOps",
           isPopular: false,
-          projectLink: null
+          ctaText: "Secure Infrastructure",
+          projectLink: "#contact",
+          metric: "99.9% Uptime focus"
         },
         {
           title: "Proactive Site Maintenance",
-          description: "Protect your software investment. Ongoing system audits, targeted bug patches, critical platform upgrades, and immediate fire-fighting support to keep your business operating continuously.",
+          description: "Protect your software investment. Ongoing system performance audits, targeted bug patches, critical platform upgrades, and immediate support to keep your business operating without interruption.",
           icon: <i className="bi bi-wrench-adjustable" style={{ fontSize: '1.25rem' }}></i>,
           tag: "Management",
           isPopular: false,
-          projectLink: null
+          ctaText: "Protect Your Stack",
+          projectLink: "#contact",
+          metric: "Zero operational downtime"
         }
       ]
     }
@@ -147,13 +169,13 @@ export default function Services() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16">
           <div>
             <p className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase text-[#4f39f6] mb-4">
-              Solutions
+              Capabilities
             </p>
-            <h2 className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-75 font-sans font-extrabold text-4xl md:text-5xl tracking-tight leading-tight mb-2 bg-gradient-to-tr from-[#4f39f6] via-[#38bdf8] to-[#94a3b8] bg-clip-text text-transparent !opacity-100 !translate-y-0">
-              Expertise & Solutions
+            <h2 className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-75 font-sans font-extrabold text-4xl md:text-5xl tracking-tight leading-tight mb-4 bg-gradient-to-tr from-[#4f39f6] via-[#38bdf8] to-[#94a3b8] bg-clip-text text-transparent !opacity-100 !translate-y-0">
+              Engineered for Business Growth
             </h2>
-            <p className="text-sm text-zinc-500 max-w-xl font-light">
-              I deliver <span className="text-[#4f39f6] font-bold">high-impact</span> business solutions engineered natively to optimize workflows, scale infrastructure, and help your enterprise <span className="bg-gradient-to-r from-[#4f39f6] to-[#60a5fa] bg-clip-text text-transparent font-extrabold tracking-tight">grow predictably.</span>
+            <p className="text-base text-zinc-600 max-w-2xl font-normal leading-relaxed">
+              I deliver <span className="text-[#4f39f6] font-bold">high-impact digital infrastructure</span> designed natively to optimize manual workflows, scale securely, and turn technical challenges into measurable <span className="bg-gradient-to-r from-[#4f39f6] to-[#60a5fa] bg-clip-text text-transparent font-extrabold tracking-tight">business revenue.</span>
             </p>
           </div>
         </div>
@@ -163,9 +185,9 @@ export default function Services() {
           {serviceGroups.map((group, groupIndex) => (
             <div key={groupIndex} className="space-y-6 md:space-y-8">
               {/* Group Title Area */}
-              <div className="border-l-4 border-[#4f39f6] pl-4 max-w-xl">
+              <div className="border-l-4 border-[#4f39f6] pl-4 max-w-2xl">
                 <h3 className="text-lg md:text-2xl font-black text-zinc-900 tracking-tight">{group.groupTitle}</h3>
-                <p className="text-xs md:text-sm text-zinc-500 mt-1">{group.groupSubtitle}</p>
+                <p className="text-sm text-zinc-500 mt-1 font-normal">{group.groupSubtitle}</p>
               </div>
 
               {/* Mobile-First Grid System */}
@@ -184,16 +206,15 @@ export default function Services() {
                     >
                       <article 
                         onMouseMove={(e) => {
-                          // Only execute 3D tilt mechanics on desktop screens to prevent mobile scroll stuttering
                           if (window.innerWidth < 768) return;
                           const card = e.currentTarget;
                           const box = card.getBoundingClientRect();
                           const x = e.clientX - box.left - box.width / 2;
                           const y = e.clientY - box.top - box.height / 2;
-                          const rotateX = -(y / (box.height / 2)) * 10; 
-                          const rotateY = (x / (box.width / 2)) * 10;
+                          const rotateX = -(y / (box.height / 2)) * 6; 
+                          const rotateY = (x / (box.width / 2)) * 6;
                           
-                          card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                          card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
                           card.style.transition = 'transform 0.08s ease-out';
                         }}
                         onMouseLeave={(e) => {
@@ -201,10 +222,10 @@ export default function Services() {
                           card.style.transform = `rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
                           card.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
                         }}
-                        className={`h-full bg-white/80 backdrop-blur-sm rounded-3xl p-6 md:p-8 border relative flex flex-col justify-between overflow-hidden transition-all duration-300 ease-out hover:bg-gradient-to-br hover:from-blue-50/50 hover:to-indigo-50/50 hover:shadow-2xl ${
+                        className={`h-full bg-white/80 backdrop-blur-sm rounded-3xl p-6 md:p-8 border relative flex flex-col justify-between overflow-hidden transition-all duration-300 ease-out hover:bg-gradient-to-br hover:from-blue-50/30 hover:to-indigo-50/30 hover:shadow-2xl ${
                           service.isPopular 
-                            ? 'border-[#4f39f6]/40 shadow-xl shadow-indigo-500/10 ring-1 ring-[#4f39f6]/20' 
-                            : 'border-[#60a5fa]/20 shadow-lg shadow-zinc-500/5 hover:border-blue-400'
+                            ? 'border-[#4f39f6]/40 shadow-xl shadow-indigo-500/5 ring-1 ring-[#4f39f6]/10' 
+                            : 'border-[#60a5fa]/20 shadow-lg shadow-zinc-500/5 hover:border-blue-400/60'
                         }`}
                         style={{ transformStyle: 'preserve-3d' }}
                       >
@@ -233,7 +254,7 @@ export default function Services() {
                               <div className="flex items-center gap-2">
                                 {service.isPopular && (
                                   <span className="text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-sm">
-                                    In Demand
+                                    High ROI
                                   </span>
                                 )}
                                 <span className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md ${
@@ -255,12 +276,19 @@ export default function Services() {
                             </p>
                           </div>
 
-                          {/* Related Project Inline Link Integration for High Ticket Items */}
-                          {service.projectLink && (
-                            <div className="pt-4 border-t border-zinc-100 mt-auto flex items-center justify-between">
-                              <span className="text-xs text-zinc-400 font-medium">Proven execution</span>
-                            </div>
-                          )}
+                          {/* Conversion Footer with Action Link */}
+                          <div className="pt-4 border-t border-zinc-100 mt-auto flex items-center justify-between">
+                            <span className="text-xs text-zinc-400 font-medium tracking-tight">
+                              {service.metric}
+                            </span>
+                            <a 
+                              href={service.projectLink || "#contact"} 
+                              className="text-xs font-bold text-[#4f39f6] hover:text-[#3b27c4] inline-flex items-center gap-1 group/link transition-colors duration-200"
+                            >
+                              {service.ctaText}
+                              <i className="bi bi-arrow-right transition-transform duration-200 group-hover/link:translate-x-0.5"></i>
+                            </a>
+                          </div>
                         </div>
                       </article>
                     </div>
