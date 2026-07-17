@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Blog() {
   return (
-    <section id="blog" className="py-28 bg-zinc-50 border-t border-b border-zinc-100">
+    <section id="HowWeWork" className="py-28 bg-zinc-50 border-t border-b border-zinc-100">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16">
           <div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-export default function Testimonials() {
+export default function Reviews() {
   const googleBusinessProfileUrl = "https://g.page/r/CQnFt9EqwoOrEAE/review";
   // Fallback or main CTA link (e.g., your contact form, WhatsApp, or Calendly)
   const ctaUrl = "#contact"; 
@@ -109,7 +109,7 @@ export default function Testimonials() {
   const infiniteReviews = [...reviewsData, ...reviewsData];
 
   return (
-    <section id="testimonials" className="py-24 bg-gradient-to-b from-white via-zinc-50/30 to-white overflow-hidden">
+    <section id="reviews" className="py-24 bg-gradient-to-b from-white via-zinc-50/30 to-white overflow-hidden">
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes marqueeVertical {
           0% { transform: translateY(0); }
