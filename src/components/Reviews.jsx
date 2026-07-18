@@ -148,10 +148,9 @@ export default function Reviews() {
             <p className="mb-3 text-xs font-bold text-[#4f39f6] tracking-widest uppercase">
               Proven Performance
             </p>
-            <h2 className="font-sans font-extrabold text-4xl md:text-5xl tracking-tight bg-gradient-to-tr from-[#4f39f6] via-[#2563eb] to-[#38bdf8] bg-clip-text text-transparent">
-              Built for Scale. Backed by Trust.
-            </h2>
-            
+            <h2 className="reveal-trigger font-sans font-extrabold text-4xl md:text-5xl tracking-tight leading-tight mb-4 bg-gradient-to-tr from-[#4f39f6] via-[#38bdf8] to-[#94a3b8] bg-clip-text text-transparent">
+              Built for Scale | Backed by Trust
+            </h2>            
             {/* Quick Metrics & Trust Badges */}
             <div className="mt-6 flex flex-wrap items-center gap-y-3 gap-x-6 text-sm text-zinc-600">
               <span className="flex items-center gap-1.5 font-semibold text-zinc-800">

@@ -31,11 +31,26 @@ export default function Hero() {
 
             {/* Conversion Optimised CTAs */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center">
-              <a href="#contact" className="inline-flex items-center justify-center gap-2 bg-[#4f39f6] text-white font-bold px-8 py-3.5 sm:py-4 rounded-xl hover:bg-[#6352f7] transition-all duration-300 text-sm shadow-[0_4px_20px_rgba(79,57,246,0.3)] hover:shadow-[0_8px_25px_rgba(79,57,246,0.45)] active:scale-95 group relative overflow-hidden text-center order-1">
+              <a 
+                href="#contact" 
+                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#4f39f6] to-[#7c3aed] text-white font-bold px-8 py-3.5 sm:py-4 rounded-xl hover:opacity-95 transition-all duration-300 text-sm shadow-[0_4px_20px_rgba(79,57,246,0.35)] hover:shadow-[0_8px_30px_rgba(79,57,246,0.5)] hover:-translate-y-0.5 active:translate-y-0 active:scale-95 group relative overflow-hidden text-center order-1"
+              >
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></span>
                 Get in touch
+                <svg 
+                  className="w-4 h-4 transform transition-transform duration-300 group-hover:translate-x-1" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor" 
+                  strokeWidth={2.5}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
               </a>
-              <a href="#work" className="inline-flex items-center justify-center gap-2 border border-zinc-200 bg-white hover:bg-zinc-50 hover:text-[#4f39f6] text-zinc-800 font-bold px-8 py-3.5 sm:py-4 rounded-xl transition-all duration-300 text-sm shadow-sm active:scale-95 backdrop-blur-sm text-center group order-2">
+              <a 
+                href="#work" 
+                className="inline-flex items-center justify-center gap-2 border-2 border-zinc-200 bg-white hover:border-[#4f39f6]/30 hover:bg-zinc-50 hover:text-[#4f39f6] text-zinc-800 font-bold px-8 py-3.5 sm:py-4 rounded-xl transition-all duration-300 text-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 active:scale-95 backdrop-blur-sm text-center group order-2"
+              >
                 Explore my work
               </a>
             </div>

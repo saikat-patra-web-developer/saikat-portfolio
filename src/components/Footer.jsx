@@ -57,8 +57,8 @@ export default function Footer({ currentYear }) {
           
           {/* Quick Professional Links */}
           <div className="flex gap-6 text-xs font-medium text-zinc-400">
-            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noreferrer" className="hover:text-zinc-600 transition-colors">LinkedIn</a>
-            <a href="https://github.com/yourusername" target="_blank" rel="noreferrer" className="hover:text-zinc-600 transition-colors">GitHub</a>
+            <a href="https://www.linkedin.com/in/saikat-patra-web-developer" target="_blank" rel="noreferrer" className="hover:text-zinc-600 transition-colors">LinkedIn</a>
+            <a href="https://github.com/saikat-patra-web-developer" target="_blank" rel="noreferrer" className="hover:text-zinc-600 transition-colors">GitHub</a>
           </div>
         </div>
       </div>

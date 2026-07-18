@@ -5,7 +5,7 @@ export default function Contact() {
     <section id="contact" className="relative py-24 bg-gradient-to-b from-white via-zinc-50/30 to-white overflow-hidden">
       <style>{`
         .perspective-container {
-          perspective: 1000px;
+          perspective: 1200px;
         }
         
         .flippable-card {
@@ -43,27 +43,58 @@ export default function Contact() {
           z-index: 1;
         }
 
-        .animate-flip-seq-1,
-        .animate-flip-seq-2,
-        .animate-flip-seq-3,
-        .animate-flip-seq-4,
-        .animate-flip-seq-5,
-        .animate-flip-seq-6 { 
-          animation: none !important; 
+        /* Enhanced High-End Flipping & Vivid Border Glow Effects */
+        @keyframes autoFlip {
+          0%, 15% {
+            transform: rotateX(0deg) scale(1);
+            background-color: rgba(24, 24, 27, 0.4);
+            border-color: rgba(63, 63, 70, 0.4);
+            box-shadow: none;
+          }
+          35%, 65% {
+            transform: rotateX(180deg) scale(1.04);
+            background-color: #0c0a14 !important;
+            border-color: #6366f1 !important;
+            box-shadow: 0 20px 40px -10px rgba(79, 57, 246, 0.45), 
+                        0 0 25px 2px rgba(79, 57, 246, 0.25), 
+                        inset 0 0 15px rgba(79, 57, 246, 0.15);
+          }
+          85%, 100% {
+            transform: rotateX(0deg) scale(1);
+            background-color: rgba(24, 24, 27, 0.4);
+            border-color: rgba(63, 63, 70, 0.4);
+            box-shadow: none;
+          }
         }
 
-        .flippable-card:hover {
-          transform: rotateX(180deg) scale(1.02);
-          background-color: rgba(24, 24, 27, 0.95) !important;
-          border-color: #4f39f6 !important;
-          box-shadow: 0 10px 25px -5px rgba(79, 57, 246, 0.2);
+        @keyframes autoFlipIcon {
+          0%, 15%, 85%, 100% {
+            background-color: rgb(24, 24, 27) !important;
+            color: rgb(161, 161, 170) !important;
+            border-color: rgb(39, 39, 42) !important;
+            box-shadow: none;
+          }
+          35%, 65% {
+            background-color: #4f39f6 !important;
+            color: #ffffff !important;
+            border-color: #818cf8 !important;
+            box-shadow: 0 0 12px rgba(79, 57, 246, 0.6);
+          }
         }
 
-        .flippable-card:hover .card-back div:first-of-type {
-          background-color: #4f39f6 !important;
-          color: #ffffff !important;
-          border-color: #4f39f6 !important;
-        }
+        .animate-flip-seq-1 { animation: autoFlip 9s infinite ease-in-out; animation-delay: 0s; }
+        .animate-flip-seq-2 { animation: autoFlip 9s infinite ease-in-out; animation-delay: 1.5s; }
+        .animate-flip-seq-3 { animation: autoFlip 9s infinite ease-in-out; animation-delay: 3s; }
+        .animate-flip-seq-4 { animation: autoFlip 9s infinite ease-in-out; animation-delay: 4s; }
+        .animate-flip-seq-5 { animation: autoFlip 9s infinite ease-in-out; animation-delay: 5.5s; }
+        .animate-flip-seq-6 { animation: autoFlip 9s infinite ease-in-out; animation-delay: 7s; }
+
+        .animate-flip-seq-1 .card-back div:first-of-type { animation: autoFlipIcon 9s infinite ease-in-out; animation-delay: 0s; }
+        .animate-flip-seq-2 .card-back div:first-of-type { animation: autoFlipIcon 9s infinite ease-in-out; animation-delay: 1.5s; }
+        .animate-flip-seq-3 .card-back div:first-of-type { animation: autoFlipIcon 9s infinite ease-in-out; animation-delay: 3s; }
+        .animate-flip-seq-4 .card-back div:first-of-type { animation: autoFlipIcon 9s infinite ease-in-out; animation-delay: 4s; }
+        .animate-flip-seq-5 .card-back div:first-of-type { animation: autoFlipIcon 9s infinite ease-in-out; animation-delay: 5.5s; }
+        .animate-flip-seq-6 .card-back div:first-of-type { animation: autoFlipIcon 9s infinite ease-in-out; animation-delay: 7s; }
       `}</style>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -93,7 +124,7 @@ export default function Contact() {
             <div className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-200 lg:col-span-7 grid sm:grid-cols-2 gap-4 w-full perspective-container">
               
               {/* Personal Email */}
-              <a href="mailto:saikatpatra300@gmail.com" className="flippable-card animate-flip-seq-1 group bg-zinc-900/40 border border-zinc-850 rounded-2xl hover:border-zinc-700 transition-all duration-300 min-h-[140px]">
+              <a href="mailto:saikatpatra300@gmail.com" className="flippable-card animate-flip-seq-1 group bg-zinc-900/40 border border-zinc-850 rounded-2xl transition-all duration-300 min-h-[140px]">
                 <div className="card-front">
                   <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg transition-colors">
                     <i className="bi bi-envelope"></i>
@@ -105,17 +136,17 @@ export default function Contact() {
                 </div>
                 <div className="card-back">
                   <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg transition-colors">
-                    <i className="bi bi-arrow-right-short text-white"></i>
+                    <i className="bi bi-envelope text-white"></i>
                   </div>
                   <div>
-                    <span className="block text-xs text-[#60a5fa] font-bold uppercase tracking-wider mb-1">Send a Message</span>
-                    <span className="block text-sm font-semibold text-white truncate">Open Mail Client →</span>
+                    <span className="block text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">Direct Email</span>
+                    <span className="block text-sm font-medium text-zinc-300 truncate">saikatpatra300@gmail.com</span>
                   </div>
                 </div>
               </a>
 
               {/* Office Email */}
-              <a href="mailto:saikatpatraoffice@gmail.com" className="flippable-card animate-flip-seq-2 group bg-zinc-900/40 border border-zinc-850 rounded-2xl hover:border-zinc-700 transition-all duration-300 min-h-[140px]">
+              <a href="mailto:saikatpatraoffice@gmail.com" className="flippable-card animate-flip-seq-2 group bg-zinc-900/40 border border-zinc-850 rounded-2xl transition-all duration-300 min-h-[140px]">
                 <div className="card-front">
                   <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg transition-colors">
                     <i className="bi bi-envelope-at"></i>
@@ -127,17 +158,17 @@ export default function Contact() {
                 </div>
                 <div className="card-back">
                   <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg transition-colors">
-                    <i className="bi bi-arrow-right-short text-white"></i>
+                    <i className="bi bi-envelope-at text-white"></i>
                   </div>
                   <div>
-                    <span className="block text-xs text-[#60a5fa] font-bold uppercase tracking-wider mb-1">Get a Proposal</span>
-                    <span className="block text-sm font-semibold text-white truncate">Open Business Mail →</span>
+                    <span className="block text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">Business Enquiries</span>
+                    <span className="block text-sm font-medium text-zinc-300 truncate">saikatpatraoffice@gmail.com</span>
                   </div>
                 </div>
               </a>
 
               {/* WhatsApp Primary */}
-              <a href="https://wa.me/919038909382" rel="noopener noreferrer" target="_blank" className="flippable-card animate-flip-seq-5 group bg-zinc-900/40 border border-zinc-850 rounded-2xl hover:border-zinc-700 transition-all duration-300 min-h-[140px]">
+              <a href="https://wa.me/919038909382" rel="noopener noreferrer" target="_blank" className="flippable-card animate-flip-seq-5 group bg-zinc-900/40 border border-zinc-850 rounded-2xl transition-all duration-300 min-h-[140px]">
                 <div className="card-front">
                   <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg transition-colors">
                     <i className="bi bi-whatsapp"></i>
@@ -152,14 +183,14 @@ export default function Contact() {
                     <i className="bi bi-whatsapp text-white"></i>
                   </div>
                   <div>
-                    <span className="block text-xs text-emerald-400 font-bold uppercase tracking-wider mb-1">Fast Response</span>
-                    <span className="block text-sm font-semibold text-white truncate">Chat on WhatsApp →</span>
+                    <span className="block text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">Instant Chat (Primary)</span>
+                    <span className="block text-sm font-medium text-zinc-300 truncate">+91 90389 09382</span>
                   </div>
                 </div>
               </a>
 
               {/* WhatsApp Secondary */}
-              <a href="https://wa.me/918902273136" rel="noopener noreferrer" target="_blank" className="flippable-card animate-flip-seq-6 group bg-zinc-900/40 border border-zinc-850 rounded-2xl hover:border-zinc-700 transition-all duration-300 min-h-[140px]">
+              <a href="https://wa.me/918902273136" rel="noopener noreferrer" target="_blank" className="flippable-card animate-flip-seq-6 group bg-zinc-900/40 border border-zinc-850 rounded-2xl transition-all duration-300 min-h-[140px]">
                 <div className="card-front">
                   <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg transition-colors">
                     <i className="bi bi-whatsapp"></i>
@@ -174,14 +205,14 @@ export default function Contact() {
                     <i className="bi bi-whatsapp text-white"></i>
                   </div>
                   <div>
-                    <span className="block text-xs text-emerald-400 font-bold uppercase tracking-wider mb-1">Alternative Line</span>
-                    <span className="block text-sm font-semibold text-white truncate">Chat on WhatsApp →</span>
+                    <span className="block text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">Instant Chat (Secondary)</span>
+                    <span className="block text-sm font-medium text-zinc-300 truncate">+91 89022 73136</span>
                   </div>
                 </div>
               </a>
 
               {/* LinkedIn */}
-              <a href="https://www.linkedin.com/in/saikat-patra-web-developer" rel="noopener noreferrer" target="_blank" className="flippable-card animate-flip-seq-3 group bg-zinc-900/40 border border-zinc-850 rounded-2xl hover:border-zinc-700 transition-all duration-300 min-h-[140px]">
+              <a href="https://www.linkedin.com/in/saikat-patra-web-developer" rel="noopener noreferrer" target="_blank" className="flippable-card animate-flip-seq-3 group bg-zinc-900/40 border border-zinc-850 rounded-2xl transition-all duration-300 min-h-[140px]">
                 <div className="card-front">
                   <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg transition-colors">
                     <i className="bi bi-linkedin"></i>
@@ -196,14 +227,14 @@ export default function Contact() {
                     <i className="bi bi-linkedin text-white"></i>
                   </div>
                   <div>
-                    <span className="block text-xs text-sky-400 font-bold uppercase tracking-wider mb-1">Vetted Profile</span>
-                    <span className="block text-sm font-semibold text-white truncate">View LinkedIn Profile →</span>
+                    <span className="block text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">Professional Network</span>
+                    <span className="block text-sm font-medium text-zinc-300 truncate">saikat-patra-web-developer</span>
                   </div>
                 </div>
               </a>
 
               {/* GitHub */}
-              <a href="https://github.com/saikat-patra-web-developer" rel="noopener noreferrer" target="_blank" className="flippable-card animate-flip-seq-4 group bg-zinc-900/40 border border-zinc-850 rounded-2xl hover:border-zinc-700 transition-all duration-300 min-h-[140px]">
+              <a href="https://github.com/saikat-patra-web-developer" rel="noopener noreferrer" target="_blank" className="flippable-card animate-flip-seq-4 group bg-zinc-900/40 border border-zinc-850 rounded-2xl transition-all duration-300 min-h-[140px]">
                 <div className="card-front">
                   <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg transition-colors">
                     <i className="bi bi-github"></i>
@@ -218,8 +249,8 @@ export default function Contact() {
                     <i className="bi bi-github text-white"></i>
                   </div>
                   <div>
-                    <span className="block text-xs text-zinc-400 font-bold uppercase tracking-wider mb-1">Proof of Work</span>
-                    <span className="block text-sm font-semibold text-white truncate">Explore Repositories →</span>
+                    <span className="block text-xs text-zinc-500 font-medium uppercase tracking-wider mb-1">Code Ecosystem</span>
+                    <span className="block text-sm font-medium text-zinc-300 truncate">saikat-patra-web-developer</span>
                   </div>
                 </div>
               </a>

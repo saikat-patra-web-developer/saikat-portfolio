@@ -70,7 +70,7 @@ export default function About() {
                   <User className="w-5 h-5 text-[#8b5cf6]" />
                 </div>
                 <div className="text-left">
-                  <h4 className="font-sans font-bold text-[14px] sm:text-[16px] text-zinc-900 leading-tight">Full Stack Architect</h4>
+                  <h4 className="font-sans font-bold text-[14px] sm:text-[16px] text-zinc-900 leading-tight">Full Stack Developer</h4>
                   <p className="font-sans text-[11px] sm:text-[12px] text-emerald-600 font-semibold flex items-center gap-1 mt-0.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
                     Available for Projects
