@@ -3,25 +3,22 @@ import React from 'react';
 export default function Portfolio() {
   return (
     <section id="portfolio" className="relative py-28 bg-zinc-50 border-t border-b border-zinc-100 overflow-hidden">
-      {/* Subtle Background Grid/Accent Layer to match your hero style */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30" />
       
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         
-        {/* Header Section */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
           <div>
             <p className="reveal-trigger text-xs font-bold text-[#4f39f6] tracking-widest uppercase mb-3">
               Case Studies
             </p>
-            <h2 className="reveal-trigger font-sans font-extrabold text-4xl md:text-5xl tracking-tight leading-tight mb-4 bg-gradient-to-tr from-[#4f39f6] via-[#38bdf8] to-[#94a3b8] bg-clip-text text-transparent">
+            <h2 className="reveal-trigger font-sans font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight mb-4 bg-gradient-to-tr from-[#4f39f6] via-[#38bdf8] to-[#94a3b8] bg-clip-text text-transparent">
               Real Results for Real Businesses
             </h2>
             <p className="text-sm text-zinc-500 max-w-xl font-light leading-relaxed">
               I don't just write clean code. I design custom internal systems, complex pricing engines, and automated workflows that eliminate operational bottlenecks and scale revenue.
             </p>
           </div>
-          {/* Top Level Quick CTA */}
           <div>
             <a 
               href="#contact" 
@@ -32,10 +29,8 @@ export default function Portfolio() {
           </div>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 items-start mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-start mb-12 md:mb-16">
           
-          {/* Project 1: Quote My Blinds */}
           <article className="group/card rounded-3xl overflow-hidden bg-white border border-zinc-200/60 hover:border-[#4f39f6] hover:shadow-xl transition-all duration-300 flex flex-col h-full">
             <div className="overflow-hidden bg-zinc-200 aspect-video relative w-full">
               <img className="w-full h-full object-cover block transition-transform duration-700 ease-out group-hover/card:scale-[1.03]" src="./qmb.png" alt="Quote My Blinds Custom CRM" loading="lazy" />
@@ -56,7 +51,6 @@ export default function Portfolio() {
             </div>
           </article>
 
-          {/* Project 2: Purge Blinds */}
           <article className="group/card rounded-3xl overflow-hidden bg-white border border-zinc-200/60 hover:border-[#4f39f6] hover:shadow-xl transition-all duration-300 flex flex-col h-full">
             <div className="overflow-hidden bg-zinc-200 aspect-video relative w-full">
               <img className="w-full h-full object-cover block transition-transform duration-700 ease-out group-hover/card:scale-[1.03]" src="./purge.png" alt="Purge Blinds Quote Portal" loading="lazy" />
@@ -77,7 +71,6 @@ export default function Portfolio() {
             </div>
           </article>
 
-          {/* Project 3: Dream Big Group */}
           <article className="group/card rounded-3xl overflow-hidden bg-white border border-zinc-200/60 hover:border-[#4f39f6] hover:shadow-xl transition-all duration-300 flex flex-col h-full">
             <div className="overflow-hidden bg-zinc-200 aspect-video relative w-full">
               <img className="w-full h-full object-cover block transition-transform duration-700 ease-out group-hover/card:scale-[1.03]" src="./db.png" alt="Dream Big Group Portal" loading="lazy" />
@@ -100,8 +93,7 @@ export default function Portfolio() {
 
         </div>
 
-        {/* Closing Inbound Lead Block */}
-        <div className="bg-white rounded-3xl p-8 border border-zinc-200/60 text-center max-w-3xl mx-auto relative z-10">
+        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-zinc-200/60 text-center max-w-3xl mx-auto relative z-10">
           <h4 className="font-sans font-bold text-xl text-zinc-900 mb-2">Need a high-performing backend system or custom CRM?</h4>
           <p className="text-xs text-zinc-500 mb-6 max-w-lg mx-auto">
             Whether it's complex business rules, automation logic, or dynamic database architecture, I can engineer the exact system your workflow needs to grow.
