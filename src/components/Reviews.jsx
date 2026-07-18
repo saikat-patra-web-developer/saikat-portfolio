@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import 'bootstrap-icons/font/bootstrap-icons.css';
 
 export default function Reviews() {
   const googleBusinessProfileUrl = "https://g.page/r/CQnFt9EqwoOrEAE/review";
@@ -115,7 +114,7 @@ export default function Reviews() {
           100% { transform: translateY(-50%); }
         }
         .scrolling-container {
-          animation: marqueeVertical 25s linear infinite; 
+          animation: marqueeVertical 20s linear infinite; 
         }
         .scrolling-container:hover {
           animation-play-state: paused;
@@ -133,6 +132,7 @@ export default function Reviews() {
         .rotate-y-180 {
           transform: rotateY(-180deg);
         }
+        
         .smooth-card-turn {
           transition: transform 0.85s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
@@ -141,16 +141,24 @@ export default function Reviews() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="mb-12 md:mb-16 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 md:gap-8 pb-8 border-b border-zinc-100">
           <div>
-            <p className="mb-2.5 text-xs font-bold text-[#4f39f6] tracking-widest uppercase">
+            <p className="mb-3 text-xs font-bold text-[#4f39f6] tracking-widest uppercase">
               Proven Performance
             </p>
             <h2 className="reveal-trigger font-sans font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight mb-4 bg-gradient-to-tr from-[#4f39f6] via-[#38bdf8] to-[#94a3b8] bg-clip-text text-transparent">
               Built for Scale | Backed by Trust
             </h2>            
-            <div className="mt-4 md:mt-6 flex flex-wrap items-center gap-y-2.5 gap-x-4 sm:gap-x-6 text-xs sm:text-sm text-zinc-600">
-              <span className="flex items-center gap-1.5 font-semibold text-zinc-800">
+            <div className="mt-6 flex flex-wrap items-center gap-y-3 gap-x-4 sm:gap-x-6 text-xs sm:text-sm text-zinc-600">
+              <span className="flex items-center gap-1.5 text-zinc-800">
                 <i className="bi bi-star-fill text-amber-400"></i>
-                <span className="text-emerald-600 font-semibold">4.9/5 Rating</span> on Google Business
+                <span className="text-emerald-600 font-bold">4.9/5 Rating</span>
+                <span className="font-normal text-zinc-500">on</span>
+                <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                </svg>
+                <span className="font-bold text-zinc-800">Google Business</span>
               </span>
               <span className="hidden sm:inline text-zinc-300">|</span>
               <span className="flex items-center gap-1.5">
@@ -191,11 +199,10 @@ export default function Reviews() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           
-          <div className="perspective-1000 w-full max-w-md mx-auto lg:max-w-none aspect-[1.1/1] h-[380px] sm:h-[480px] md:h-[500px] lg:h-[480px] relative order-1">
+          <div className="perspective-1000 w-full aspect-[1.1/1] min-h-[480px] relative order-1 lg:order-1">
             <div className={`w-full h-full preserve-3d smooth-card-turn ${isFlipped ? 'rotate-y-180' : ''}`}>
-              
               <div className="absolute inset-0 w-full h-full backface-hidden flex items-center justify-center">
                 <img 
                   src="./mobile.png" 
@@ -218,17 +225,17 @@ export default function Reviews() {
                   </div>
                 </div>
 
-                <div className="block md:hidden absolute top-[8%] right-[-2%] z-20 w-[140px] xs:w-[170px] bg-white rounded-xl p-2.5 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.08)] border border-slate-100/50">
-                  <div className="flex items-center gap-1 mb-1">
-                    <span className="font-bold text-[10px] xs:text-xs text-[#1e293b] truncate">{collageData.front.topLeftName}</span>
-                    <i className="bi bi-patch-check-fill text-[#3b82f6] shrink-0 text-[10px]"></i>
+                <div className="block md:hidden absolute top-[12%] right-0 z-20 w-[180px] bg-white rounded-2xl p-3 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.08)] border border-slate-100/50">
+                  <div className="flex items-center gap-1.5 mb-1">
+                    <span className="font-bold text-xs text-[#1e293b]">{collageData.front.topLeftName}</span>
+                    <i className="bi bi-patch-check-fill text-[#3b82f6] shrink-0 text-xs"></i>
                   </div>
-                  <p className="text-[9px] leading-tight text-[#475569] font-medium mb-1.5 line-clamp-3">
+                  <p className="text-[9px] leading-relaxed text-[#475569] font-medium mb-1.5 line-clamp-3">
                     {collageData.front.topLeftText}
                   </p>
                   <div className="flex gap-0.5">
                     {[...Array(5)].map((_, i) => (
-                      <i key={i} className="bi bi-star-fill text-[#f59e0b] text-[8px]"></i>
+                      <i key={i} className="bi bi-star-fill text-[#f59e0b] text-[9px]"></i>
                     ))}
                   </div>
                 </div>
@@ -254,17 +261,17 @@ export default function Reviews() {
                   </div>
                 </div>
 
-                <div className="block md:hidden absolute bottom-[5%] left-[-2%] z-20 w-[110px] xs:w-[130px] bg-white rounded-xl overflow-hidden shadow-[0_10px_30px_-5px_rgba(0,0,0,0.1)] border border-slate-100/50">
-                  <div className="relative h-[75px] xs:h-[85px] w-full">
+                <div className="block md:hidden absolute bottom-[2%] left-0 z-20 w-[135px] bg-white rounded-2xl overflow-hidden shadow-[0_10px_30px_-5px_rgba(0,0,0,0.1)] border border-slate-100/50">
+                  <div className="relative h-[85px] w-full">
                     <img src={collageData.front.bottomLeftImg} alt={collageData.front.bottomLeftTitle} className="w-full h-full object-cover" />
-                    <div className="absolute top-1.5 left-1.5 w-5 h-5 bg-[#0ea5e9] rounded-md flex items-center justify-center shadow-md">
-                      <i className="bi bi-geo-alt-fill text-white text-[10px]"></i>
+                    <div className="absolute top-2 left-2 w-6 h-6 bg-[#0ea5e9] rounded-lg flex items-center justify-center shadow-md">
+                      <i className="bi bi-geo-alt-fill text-white text-xs"></i>
                     </div>
                   </div>
                   <div className="p-2">
-                    <h4 className="font-bold text-[10px] text-slate-800 truncate">{collageData.front.bottomLeftTitle}</h4>
+                    <h4 className="font-bold text-[11px] text-slate-800 truncate">{collageData.front.bottomLeftTitle}</h4>
                     <div className="flex items-center gap-1 mt-0.5">
-                      <span className="text-[8px] font-semibold text-slate-500">4.5</span>
+                      <span className="text-[9px] font-semibold text-slate-500">4.5</span>
                       <div className="flex gap-[1px]">
                         {[...Array(5)].map((_, i) => (
                           <i key={i} className="bi bi-star-fill text-[#f59e0b] text-[7px]"></i>
@@ -275,19 +282,19 @@ export default function Reviews() {
                   </div>
                 </div>
 
-                <div className="absolute z-50 w-[110px] h-[110px] xs:w-[140px] xs:h-[140px] sm:w-[200px] sm:h-[200px] rounded-full border-4 border-[#fe9600] bg-[#E3EFFF] overflow-hidden shadow-lg flex items-center justify-center">
+                <div className="absolute z-50 w-[170px] h-[170px] sm:w-[200px] sm:h-[200px] rounded-full border-4 border-[#fe9600] bg-[#E3EFFF] overflow-hidden shadow-lg flex items-center justify-center">
                   <img src={collageData.front.centerAvatar} alt="Consultant Front Avatar" className="w-full h-full object-cover" />
                 </div>
 
-                <div className="absolute top-0 left-[-4%] md:left-[-2%] z-20 flex items-end scale-75 xs:scale-90 md:scale-100 origin-top-left">
-                  <div className="relative w-[80px] h-[90px] md:w-[100px] md:h-[110px] flex items-center justify-center">
-                    <i className="bi bi-shield-fill text-[#2563eb] drop-shadow-md text-[80px] md:text-[100px] leading-none"></i>
+                <div className="absolute top-0 left-[-2%] z-20 flex items-end">
+                  <div className="relative w-[100px] h-[110px] flex items-center justify-center">
+                    <i className="bi bi-shield-fill text-[#2563eb] drop-shadow-md text-[100px] leading-none"></i>
                     <div className="absolute inset-0 flex items-center justify-center mb-2">
-                      <i className="bi bi-check-lg text-white text-3xl md:text-4xl font-extrabold"></i>
+                      <i className="bi bi-check-lg text-white text-4xl font-extrabold"></i>
                     </div>
                   </div>
-                  <div className="w-11 h-11 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center shadow-lg border border-slate-100/30 -ml-7 md:-ml-9 -mb-1 z-50">
-                    <svg className="w-6 h-6 md:w-8 md:h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg border border-slate-100/30 -ml-9 -mb-1 z-50">
+                    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                       <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
                       <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
@@ -296,18 +303,18 @@ export default function Reviews() {
                   </div>
                 </div>
 
-                <div className="absolute bottom-[8%] right-[-6%] md:right-[-4%] z-20 scale-75 xs:scale-90 md:scale-100 origin-bottom-right">
-                  <div className="absolute -top-4 right-5 md:-top-5 md:right-6 w-7 h-7 md:w-9 md:h-9 bg-[#25D366] rounded-lg md:rounded-xl flex items-center justify-center shadow-md animate-bounce">
-                    <i className="bi bi-whatsapp text-white text-xs md:text-sm"></i>
+                <div className="absolute bottom-[10%] right-[-4%] z-20">
+                  <div className="absolute -top-5 right-6 w-9 h-9 bg-[#25D366] rounded-xl flex items-center justify-center shadow-md animate-bounce">
+                    <i className="bi bi-whatsapp text-white text-sm"></i>
                   </div>
-                  <div className="w-[170px] md:w-[240px] bg-white rounded-xl md:rounded-2xl shadow-[0_12px_30px_rgba(0,0,0,0.08)] border border-slate-100 overflow-hidden">
-                    <div className="bg-[#eefcf3] px-3 md:px-4 py-1.5 md:py-2 flex items-center justify-between">
+                  <div className="w-[210px] sm:w-[240px] bg-white rounded-2xl shadow-[0_12px_30px_rgba(0,0,0,0.08)] border border-slate-100 overflow-hidden">
+                    <div className="bg-[#eefcf3] px-4 py-2 flex items-center justify-between">
                       <div className="flex items-center gap-1.5">
-                        <span className="text-[10px] md:text-[11px] font-bold text-slate-800 truncate max-w-[120px] md:max-w-none">{collageData.front.badgeTitle}</span>
+                        <span className="text-[11px] font-bold text-slate-800">{collageData.front.badgeTitle}</span>
                       </div>
                     </div>
-                    <div className="p-2.5 md:p-3 flex justify-center items-center">
-                      <span className="text-slate-600 font-medium text-[10px] md:text-[11px] tracking-wide leading-tight md:leading-snug">"{collageData.front.badgeMessage}"</span>
+                    <div className="p-3 flex justify-center items-center">
+                      <span className="text-slate-600 font-medium text-[11px] tracking-wide leading-snug">"{collageData.front.badgeMessage}"</span>
                     </div>
                   </div>
                 </div>
@@ -335,17 +342,17 @@ export default function Reviews() {
                   </div>
                 </div>
 
-                <div className="block md:hidden absolute top-[8%] right-[-2%] z-20 w-[140px] xs:w-[170px] bg-white rounded-xl p-2.5 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.08)] border border-slate-100/50">
-                  <div className="flex items-center gap-1 mb-1">
-                    <span className="font-bold text-[10px] xs:text-xs text-[#1e293b] truncate">{collageData.back.topLeftName}</span>
-                    <i className="bi bi-patch-check-fill text-[#3b82f6] shrink-0 text-[10px]"></i>
+                <div className="block md:hidden absolute top-[12%] right-0 z-20 w-[180px] bg-white rounded-2xl p-3 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.08)] border border-slate-100/50">
+                  <div className="flex items-center gap-1.5 mb-1">
+                    <span className="font-bold text-xs text-[#1e293b]">{collageData.back.topLeftName}</span>
+                    <i className="bi bi-patch-check-fill text-[#3b82f6] shrink-0 text-xs"></i>
                   </div>
-                  <p className="text-[9px] leading-tight text-[#475569] font-medium mb-1.5 line-clamp-3">
+                  <p className="text-[9px] leading-relaxed text-[#475569] font-medium mb-1.5 line-clamp-3">
                     {collageData.back.topLeftText}
                   </p>
                   <div className="flex gap-0.5">
                     {[...Array(5)].map((_, i) => (
-                      <i key={i} className="bi bi-star-fill text-[#f59e0b] text-[8px]"></i>
+                      <i key={i} className="bi bi-star-fill text-[#f59e0b] text-[9px]"></i>
                     ))}
                   </div>
                 </div>
@@ -371,17 +378,17 @@ export default function Reviews() {
                   </div>
                 </div>
 
-                <div className="block md:hidden absolute bottom-[5%] left-[-2%] z-20 w-[110px] xs:w-[130px] bg-white rounded-xl overflow-hidden shadow-[0_10px_30px_-5px_rgba(0,0,0,0.1)] border border-slate-100/50">
-                  <div className="relative h-[75px] xs:h-[85px] w-full">
+                <div className="block md:hidden absolute bottom-[2%] left-0 z-20 w-[135px] bg-white rounded-2xl overflow-hidden shadow-[0_10px_30px_-5px_rgba(0,0,0,0.1)] border border-slate-100/50">
+                  <div className="relative h-[85px] w-full">
                     <img src={collageData.back.bottomLeftImg} alt={collageData.back.bottomLeftTitle} className="w-full h-full object-cover" />
-                    <div className="absolute top-1.5 left-1.5 w-5 h-5 bg-[#0ea5e9] rounded-md flex items-center justify-center shadow-md">
-                      <i className="bi bi-geo-alt-fill text-white text-[10px]"></i>
+                    <div className="absolute top-2 left-2 w-6 h-6 bg-[#0ea5e9] rounded-lg flex items-center justify-center shadow-md">
+                      <i className="bi bi-geo-alt-fill text-white text-xs"></i>
                     </div>
                   </div>
                   <div className="p-2">
-                    <h4 className="font-bold text-[10px] text-slate-800 truncate">{collageData.back.bottomLeftTitle}</h4>
+                    <h4 className="font-bold text-[11px] text-slate-800 truncate">{collageData.back.bottomLeftTitle}</h4>
                     <div className="flex items-center gap-1 mt-0.5">
-                      <span className="text-[8px] font-semibold text-slate-500">4.5</span>
+                      <span className="text-[9px] font-semibold text-slate-500">4.5</span>
                       <div className="flex gap-[1px]">
                         {[...Array(5)].map((_, i) => (
                           <i key={i} className="bi bi-star-fill text-[#f59e0b] text-[7px]"></i>
@@ -392,19 +399,19 @@ export default function Reviews() {
                   </div>
                 </div>
 
-                <div className="absolute z-50 w-[110px] h-[110px] xs:w-[140px] xs:h-[140px] sm:w-[200px] sm:h-[200px] rounded-full border-4 border-[#fe9600] bg-[#E3EFFF] overflow-hidden shadow-lg flex items-center justify-center">
+                <div className="absolute z-50 w-[170px] h-[170px] sm:w-[200px] sm:h-[200px] rounded-full border-4 border-[#fe9600] bg-[#E3EFFF] overflow-hidden shadow-lg flex items-center justify-center">
                   <img src={collageData.back.centerAvatar} alt="Consultant Back Avatar" className="w-full h-full object-cover" />
                 </div>
 
-                <div className="absolute top-0 left-[-4%] md:left-[-2%] z-20 flex items-end scale-75 xs:scale-90 md:scale-100 origin-top-left">
-                  <div className="relative w-[80px] h-[90px] md:w-[100px] md:h-[110px] flex items-center justify-center">
-                    <i className="bi bi-shield-fill text-[#2563eb] drop-shadow-md text-[80px] md:text-[100px] leading-none"></i>
+                <div className="absolute top-0 left-[-2%] z-20 flex items-end">
+                  <div className="relative w-[100px] h-[110px] flex items-center justify-center">
+                    <i className="bi bi-shield-fill text-[#2563eb] drop-shadow-md text-[100px] leading-none"></i>
                     <div className="absolute inset-0 flex items-center justify-center mb-2">
-                      <i className="bi bi-check-lg text-white text-3xl md:text-4xl font-extrabold"></i>
+                      <i className="bi bi-check-lg text-white text-4xl font-extrabold"></i>
                     </div>
                   </div>
-                  <div className="w-11 h-11 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center shadow-lg border border-slate-100/30 -ml-7 md:-ml-9 -mb-1 z-50">
-                    <svg className="w-6 h-6 md:w-8 md:h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg border border-slate-100/30 -ml-9 -mb-1 z-50">
+                    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                       <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
                       <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
@@ -413,27 +420,26 @@ export default function Reviews() {
                   </div>
                 </div>
 
-                <div className="absolute bottom-[8%] right-[-6%] md:right-[-4%] z-20 scale-75 xs:scale-90 md:scale-100 origin-bottom-right">
-                  <div className="absolute -top-4 right-5 md:-top-5 md:right-6 w-7 h-7 md:w-9 md:h-9 bg-[#25D366] rounded-lg md:rounded-xl flex items-center justify-center shadow-md animate-bounce">
-                    <i className="bi bi-whatsapp text-white text-xs md:text-sm"></i>
+                <div className="absolute bottom-[10%] right-[-4%] z-20">
+                  <div className="absolute -top-5 right-6 w-9 h-9 bg-[#25D366] rounded-xl flex items-center justify-center shadow-md animate-bounce">
+                    <i className="bi bi-whatsapp text-white text-sm"></i>
                   </div>
-                  <div className="w-[170px] md:w-[240px] bg-white rounded-xl md:rounded-2xl shadow-[0_12px_30px_rgba(0,0,0,0.08)] border border-slate-100 overflow-hidden">
-                    <div className="bg-[#eefcf3] px-3 md:px-4 py-1.5 md:py-2 flex items-center justify-between">
+                  <div className="w-[210px] sm:w-[240px] bg-white rounded-2xl shadow-[0_12px_30px_rgba(0,0,0,0.08)] border border-slate-100 overflow-hidden">
+                    <div className="bg-[#eefcf3] px-4 py-2 flex items-center justify-between">
                       <div className="flex items-center gap-1.5">
-                        <span className="text-[10px] md:text-[11px] font-bold text-slate-800 truncate max-w-[120px] md:max-w-none">{collageData.back.badgeTitle}</span>
+                        <span className="text-[11px] font-bold text-slate-800">{collageData.back.badgeTitle}</span>
                       </div>
                     </div>
-                    <div className="p-2.5 md:p-3 flex justify-center items-center">
-                      <span className="text-slate-600 font-medium text-[10px] md:text-[11px] tracking-wide leading-tight md:leading-snug">"{collageData.back.badgeMessage}"</span>
+                    <div className="p-3 flex justify-center items-center">
+                      <span className="text-slate-600 font-medium text-[11px] tracking-wide leading-snug">"{collageData.back.badgeMessage}"</span>
                     </div>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
 
-          <div className="h-[380px] sm:h-[420px] overflow-hidden relative order-2">
+          <div className="h-[420px] overflow-hidden relative order-2 lg:order-2">
             <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-b from-white via-transparent to-transparent z-10 pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-white via-transparent to-transparent z-10 pointer-events-none" />
             
@@ -441,29 +447,29 @@ export default function Reviews() {
               {infiniteReviews.map((review, idx) => (
                 <blockquote 
                   key={idx}
-                  className="bg-white rounded-2xl p-5 sm:p-6 border border-zinc-200/80 shadow-sm hover:shadow-md hover:border-[#4f39f6]/30 transition-all duration-300 relative flex flex-col justify-between h-[185px] sm:h-[195px] shrink-0"
+                  className="bg-white rounded-2xl p-4 sm:p-6 border border-zinc-200/80 shadow-sm hover:shadow-md hover:border-[#4f39f6]/30 transition-all duration-300 relative flex flex-col justify-between h-[210px] sm:h-[195px] shrink-0"
                 >
                   <div>
-                    <div className="flex items-center justify-between mb-2 sm:mb-3">
+                    <div className="flex items-center justify-between mb-3">
                       <div className="flex gap-0.5" aria-label={`${review.rating} stars`}>
                         {[...Array(review.rating)].map((_, i) => (
                           <i key={i} className="bi bi-star-fill text-amber-400 text-xs" aria-hidden="true"></i>
                         ))}
                       </div>
                       {review.verified && (
-                        <span className="inline-flex items-center gap-1 text-[9px] sm:text-[10px] font-bold text-blue-600 bg-blue-50/50 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full border border-blue-100/60">
-                          <i className="bi bi-patch-check-fill text-[10px] sm:text-[11px] leading-none text-[#2563eb]"></i>
-                          Verified Project
+                        <span className="inline-flex items-center gap-1 text-[10px] font-bold text-blue-600 bg-blue-50/50 px-2.5 py-1 rounded-full border border-blue-100/60">
+                          <i className="bi bi-patch-check-fill text-[11px] leading-none text-[#2563eb]"></i>
+                          Verified Client Project
                         </span>
                       )}
                     </div>
-                    <p className="text-zinc-600 text-[11px] sm:text-[13px] leading-relaxed mb-2 sm:mb-3 font-normal line-clamp-2 sm:line-clamp-3 italic">
+                    <p className="text-zinc-600 text-xs sm:text-[13px] leading-relaxed mb-3 font-normal line-clamp-3 italic">
                       "{review.text}"
                     </p>
                   </div>                  
-                  <footer className="flex items-center justify-between pt-2.5 sm:pt-3 border-t border-zinc-100">
-                    <div className="flex items-center gap-2 sm:gap-3">
-                      <div className="flex items-center justify-center bg-zinc-50 w-8 h-8 sm:w-9 sm:h-9 rounded-full shrink-0 border border-zinc-200/80 p-1.5 sm:p-2">
+                  <footer className="flex items-center justify-between pt-3 border-t border-zinc-100">
+                    <div className="flex items-center gap-3">
+                      <div className="flex items-center justify-center bg-zinc-50 w-9 h-9 rounded-full shrink-0 border border-zinc-200/80 p-2">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
                           <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                           <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -473,11 +479,11 @@ export default function Reviews() {
                       </div>
                       <div>
                         <p className="font-bold text-xs text-zinc-900">{review.name}</p>
-                        <p className="text-[9px] sm:text-[10px] text-zinc-500 font-semibold uppercase tracking-wider">{review.role}</p>
+                        <p className="text-[10px] text-zinc-500 font-semibold uppercase tracking-wider">{review.role}</p>
                       </div>
                     </div>
-                    <span className="text-[9px] sm:text-[10px] font-semibold text-slate-400 group-hover:text-blue-600 transition-colors">
-                      On-Time Delivery <i className="bi bi-check-circle-fill text-emerald-500 ml-0.5"></i>
+                    <span className="text-[10px] font-semibold text-slate-400 group-hover:text-blue-600 transition-colors">
+                      On-Time Delivery <i className="bi bi-check-circle-fill text-emerald-500 ml-1"></i>
                     </span>
                   </footer>
                 </blockquote>
