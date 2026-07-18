@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-24 bg-gradient-to-b from-white via-zinc-50/30 to-white overflow-hidden">
+    <section id="contact" className="relative py-12 sm:py-24 bg-gradient-to-b from-white via-zinc-50/30 to-white overflow-hidden">
       <style>{`
         .perspective-container {
           perspective: 1200px;
@@ -26,11 +26,17 @@ export default function Contact() {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          padding: 1.25rem; 
+          padding: 1rem;
           border-radius: 1rem; 
           width: 100%;
           height: 100%;
           transform: translateZ(0);
+        }
+
+        @media (min-width: 640px) {
+          .card-front, .card-back {
+            padding: 1.25rem;
+          }
         }
 
         .card-front {
@@ -43,7 +49,6 @@ export default function Contact() {
           z-index: 1;
         }
 
-        /* Enhanced High-End Flipping & Vivid Border Glow Effects */
         @keyframes autoFlip {
           0%, 15% {
             transform: rotateX(0deg) scale(1);
@@ -98,33 +103,30 @@ export default function Contact() {
       `}</style>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-zinc-950 rounded-[2.5rem] p-10 md:p-16 relative overflow-hidden border border-zinc-900 shadow-2xl">
+        <div className="bg-zinc-950 rounded-3xl sm:rounded-[2.5rem] p-6 sm:p-10 md:p-16 relative overflow-hidden border border-zinc-900 shadow-2xl">
           <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-[#4f39f6]/15 to-transparent rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-[#4f39f6]/10 to-transparent rounded-full blur-2xl pointer-events-none" aria-hidden="true"></div>
 
-          <div className="relative z-10 grid lg:grid-cols-12 gap-12 items-start">
+          <div className="relative z-10 grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             
-            {/* Left Content Column */}
             <div className="lg:col-span-5 text-left lg:sticky lg:top-8">
-              <p className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out text-xs font-bold text-[#4f39f6] tracking-widest uppercase mb-4">
+              <p className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out text-xs font-bold text-[#4f39f6] tracking-widest uppercase mb-3 sm:mb-4">
                 Let's Build Something Great
               </p>
-              <h2 className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-75 font-sans font-extrabold text-4xl md:text-5xl text-white tracking-tight leading-[1.15] mb-6">
+              <h2 className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-75 font-sans font-extrabold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight leading-[1.15] mb-4 sm:mb-6">
                 Ready to Streamline Your Business?
               </h2>
-              <p className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-150 text-zinc-300 font-light leading-relaxed mb-4">
+              <p className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-150 text-zinc-300 font-light text-sm sm:text-base leading-relaxed mb-3 sm:mb-4">
                 Whether you need to scale custom administration systems, optimize complex operations, or engineer responsive, intuitive web applications from the ground up I deliver robust architecture built for business growth.
               </p>
-              <p className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-150 text-zinc-400 font-light text-sm leading-relaxed">
+              <p className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-150 text-zinc-400 font-light text-xs sm:text-sm leading-relaxed">
                 Skip the long forms. Choose your preferred communication channel on the right to start detailing your application objectives directly with me.
               </p>
             </div>
 
-            {/* Right Interactive Cards Column */}
-            <div className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-200 lg:col-span-7 grid sm:grid-cols-2 gap-4 w-full perspective-container">
+            <div className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-200 lg:col-span-7 grid sm:grid-cols-2 gap-3 sm:gap-4 w-full perspective-container">
               
-              {/* Personal Email */}
-              <a href="mailto:saikatpatra300@gmail.com" className="flippable-card animate-flip-seq-1 group bg-zinc-900/40 border border-zinc-850 rounded-2xl transition-all duration-300 min-h-[140px]">
+              <a href="mailto:saikatpatra300@gmail.com" className="flippable-card animate-flip-seq-1 group bg-zinc-900/40 border border-zinc-850 rounded-2xl transition-all duration-300 min-h-[130px] sm:min-h-[140px]">
                 <div className="card-front">
                   <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg transition-colors">
                     <i className="bi bi-envelope"></i>
@@ -145,8 +147,7 @@ export default function Contact() {
                 </div>
               </a>
 
-              {/* Office Email */}
-              <a href="mailto:saikatpatraoffice@gmail.com" className="flippable-card animate-flip-seq-2 group bg-zinc-900/40 border border-zinc-850 rounded-2xl transition-all duration-300 min-h-[140px]">
+              <a href="mailto:saikatpatraoffice@gmail.com" className="flippable-card animate-flip-seq-2 group bg-zinc-900/40 border border-zinc-850 rounded-2xl transition-all duration-300 min-h-[130px] sm:min-h-[140px]">
                 <div className="card-front">
                   <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg transition-colors">
                     <i className="bi bi-envelope-at"></i>
@@ -167,8 +168,7 @@ export default function Contact() {
                 </div>
               </a>
 
-              {/* WhatsApp Primary */}
-              <a href="https://wa.me/919038909382" rel="noopener noreferrer" target="_blank" className="flippable-card animate-flip-seq-5 group bg-zinc-900/40 border border-zinc-850 rounded-2xl transition-all duration-300 min-h-[140px]">
+              <a href="https://wa.me/919038909382" rel="noopener noreferrer" target="_blank" className="flippable-card animate-flip-seq-5 group bg-zinc-900/40 border border-zinc-850 rounded-2xl transition-all duration-300 min-h-[130px] sm:min-h-[140px]">
                 <div className="card-front">
                   <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg transition-colors">
                     <i className="bi bi-whatsapp"></i>
@@ -189,8 +189,7 @@ export default function Contact() {
                 </div>
               </a>
 
-              {/* WhatsApp Secondary */}
-              <a href="https://wa.me/918902273136" rel="noopener noreferrer" target="_blank" className="flippable-card animate-flip-seq-6 group bg-zinc-900/40 border border-zinc-850 rounded-2xl transition-all duration-300 min-h-[140px]">
+              <a href="https://wa.me/918902273136" rel="noopener noreferrer" target="_blank" className="flippable-card animate-flip-seq-6 group bg-zinc-900/40 border border-zinc-850 rounded-2xl transition-all duration-300 min-h-[130px] sm:min-h-[140px]">
                 <div className="card-front">
                   <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg transition-colors">
                     <i className="bi bi-whatsapp"></i>
@@ -211,8 +210,7 @@ export default function Contact() {
                 </div>
               </a>
 
-              {/* LinkedIn */}
-              <a href="https://www.linkedin.com/in/saikat-patra-web-developer" rel="noopener noreferrer" target="_blank" className="flippable-card animate-flip-seq-3 group bg-zinc-900/40 border border-zinc-850 rounded-2xl transition-all duration-300 min-h-[140px]">
+              <a href="https://www.linkedin.com/in/saikat-patra-web-developer" rel="noopener noreferrer" target="_blank" className="flippable-card animate-flip-seq-3 group bg-zinc-900/40 border border-zinc-850 rounded-2xl transition-all duration-300 min-h-[130px] sm:min-h-[140px]">
                 <div className="card-front">
                   <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg transition-colors">
                     <i className="bi bi-linkedin"></i>
@@ -233,8 +231,7 @@ export default function Contact() {
                 </div>
               </a>
 
-              {/* GitHub */}
-              <a href="https://github.com/saikat-patra-web-developer" rel="noopener noreferrer" target="_blank" className="flippable-card animate-flip-seq-4 group bg-zinc-900/40 border border-zinc-850 rounded-2xl transition-all duration-300 min-h-[140px]">
+              <a href="https://github.com/saikat-patra-web-developer" rel="noopener noreferrer" target="_blank" className="flippable-card animate-flip-seq-4 group bg-zinc-900/40 border border-zinc-850 rounded-2xl transition-all duration-300 min-h-[130px] sm:min-h-[140px]">
                 <div className="card-front">
                   <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 text-lg transition-colors">
                     <i className="bi bi-github"></i>

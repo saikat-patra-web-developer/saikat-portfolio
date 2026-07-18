@@ -15,47 +15,42 @@ export default function Footer({ currentYear }) {
         .orbiting-skill:hover { animation-play-state: paused; }
       `}} />
 
-      {/* Background Blurs transferred from About */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-[#4f39f6]/10 via-[#60a5fa]/10 to-transparent rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-[600px] h-[600px] bg-gradient-to-br from-[#ffed4a]/5 via-[#60a5fa]/10 to-[#4f39f6]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-40 pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-gradient-to-tr from-[#4f39f6]/10 via-[#60a5fa]/10 to-transparent rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-[350px] md:w-[600px] h-[350px] md:h-[600px] bg-gradient-to-br from-[#ffed4a]/5 via-[#60a5fa]/10 to-[#4f39f6]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:3rem_3rem] md:bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30 md:opacity-40 pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-6 py-12 z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 border-b border-zinc-200/60 pb-8 mb-8">
-          {/* Pitch / Positioning */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-10 md:py-12 z-10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 border-b border-zinc-200/60 pb-8 mb-8">
           <div className="text-center md:text-left">
-            <h3 className="text-lg font-semibold text-zinc-900">
+            <h3 className="text-base sm:text-lg font-semibold text-zinc-900">
               Ready to automate your business workflows?
             </h3>
-            <p className="text-sm text-zinc-500 mt-1 max-w-md">
+            <p className="text-sm text-zinc-500 mt-1 max-w-md mx-auto md:mx-0">
               Specializing in custom web applications, CRMs, and administrative systems built to scale.
             </p>
           </div>
 
-          {/* High-Conversion Call to Action */}
-          <div className="flex flex-col sm:flex-row gap-4 items-center">
+          <div className="flex flex-col sm:flex-row gap-4 items-center w-full sm:w-auto">
             <a 
               href="#portfolio" 
-              className="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors"
+              className="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors py-2 sm:py-0"
             >
               See Client Success Stories
             </a>
             <a 
               href="mailto:your.email@example.com" 
-              className="inline-flex items-center justify-center rounded-lg bg-zinc-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-zinc-800 transition-all shadow-sm shadow-zinc-950/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900"
+              className="inline-flex w-full sm:w-auto items-center justify-center rounded-lg bg-zinc-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-zinc-800 transition-all shadow-sm shadow-zinc-950/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900"
             >
               Let's Build Something
             </a>
           </div>
         </div>
 
-        {/* Bottom Metadata */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-zinc-400 text-center sm:text-left">
+        <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-zinc-400 text-center sm:text-left tracking-tight sm:tracking-normal">
             © {currentYear} Saikat Patra • Full Stack Web Developer. All rights reserved.
           </p>
           
-          {/* Quick Professional Links */}
           <div className="flex gap-6 text-xs font-medium text-zinc-400">
             <a href="https://www.linkedin.com/in/saikat-patra-web-developer" target="_blank" rel="noreferrer" className="hover:text-zinc-600 transition-colors">LinkedIn</a>
             <a href="https://github.com/saikat-patra-web-developer" target="_blank" rel="noreferrer" className="hover:text-zinc-600 transition-colors">GitHub</a>
