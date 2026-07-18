@@ -195,45 +195,25 @@ export default function Services() {
                       key={index}
                       className="opacity-0 animate-fade-in-up h-full"
                       style={{ 
-                        animationDelay: `${(index % 3) * 100}ms`,
-                        perspective: '1000px'
+                        animationDelay: `${(index % 3) * 100}ms`
                       }}
                     >
                       <article 
-                        onMouseMove={(e) => {
-                          if (window.innerWidth < 768) return;
-                          const card = e.currentTarget;
-                          const box = card.getBoundingClientRect();
-                          const x = e.clientX - box.left - box.width / 2;
-                          const y = e.clientY - box.top - box.height / 2;
-                          const rotateX = -(y / (box.height / 2)) * 6; 
-                          const rotateY = (x / (box.width / 2)) * 6;
-                          
-                          card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
-                          card.style.transition = 'transform 0.08s ease-out';
-                        }}
-                        onMouseLeave={(e) => {
-                          const card = e.currentTarget;
-                          card.style.transform = `rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-                          card.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
-                        }}
-                        className={`h-full bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 border relative flex flex-col justify-between overflow-hidden transition-all duration-300 ease-out hover:bg-gradient-to-br hover:from-blue-50/30 hover:to-indigo-50/30 hover:shadow-2xl ${
+                        className={`h-full bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 border relative flex flex-col justify-between overflow-hidden ${
                           service.isPopular 
                             ? 'border-[#4f39f6]/40 shadow-xl shadow-indigo-500/5 ring-1 ring-[#4f39f6]/10' 
-                            : 'border-[#60a5fa]/20 shadow-lg shadow-zinc-500/5 hover:border-blue-400/60'
+                            : 'border-[#60a5fa]/20 shadow-lg shadow-zinc-500/5'
                         }`}
-                        style={{ transformStyle: 'preserve-3d' }}
                       >
                         
                         <div 
                           className="absolute top-0 right-0 w-28 h-28 sm:w-36 sm:h-36 rounded-full blur-xl pointer-events-none" 
                           style={{ 
-                            backgroundImage: `radial-gradient(circle at top right, ${gradientColors})`,
-                            transform: 'translateZ(15px)'
+                            backgroundImage: `radial-gradient(circle at top right, ${gradientColors})`
                           }}
                         />
                         
-                        <div style={{ transform: 'translateZ(30px)', transformStyle: 'preserve-3d' }} className="flex flex-col h-full justify-between">
+                        <div className="flex flex-col h-full justify-between">
                           <div>
                             
                             <div className="flex items-start sm:items-center justify-between gap-4 mb-5 sm:mb-6">
