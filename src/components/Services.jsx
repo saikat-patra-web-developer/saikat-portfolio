@@ -281,13 +281,6 @@ export default function Services() {
                             <span className="text-xs text-zinc-400 font-medium tracking-tight">
                               {service.metric}
                             </span>
-                            <a 
-                              href={service.projectLink || "#contact"} 
-                              className="text-xs font-bold text-[#4f39f6] hover:text-[#3b27c4] inline-flex items-center gap-1 group/link transition-colors duration-200"
-                            >
-                              {service.ctaText}
-                              <i className="bi bi-arrow-right transition-transform duration-200 group-hover/link:translate-x-0.5"></i>
-                            </a>
                           </div>
                         </div>
                       </article>

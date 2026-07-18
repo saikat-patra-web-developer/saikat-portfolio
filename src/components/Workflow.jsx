@@ -1,236 +1,235 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Workflow() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isHolding, setIsHolding] = useState(false);
 
   const steps = [
-    // Left Column Steps
-    {
-      number: '1',
-      title: 'Free Consultation',
-      description: 'We dive deep into your business goals, target audience, and system requirements to map out the perfect digital architecture.',
-      highlight: 'Understand objectives & scope',
-      side: 'left',
-      icon: (
-        <svg className="w-6 h-6 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-        </svg>
-      )
-    },
-    {
-      number: '2',
-      title: 'Planning & Strategy',
-      description: 'Crafting detailed wireframes, user journeys, and project roadmaps to ensure alignment before code is written.',
-      highlight: 'Interactive wireframes & flowcharts',
-      side: 'left',
-      icon: (
-        <svg className="w-6 h-6 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-        </svg>
-      )
-    },
-    {
-      number: '3',
-      title: 'Development',
-      description: 'Our team builds your high-performing web application using modern, scalable tech stacks with clean, optimized code.',
-      highlight: 'Production-ready architecture',
-      side: 'left',
-      icon: (
-        <svg className="w-6 h-6 text-violet-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-        </svg>
-      )
-    },
-    // Right Column Steps
-    {
-      number: '4',
-      title: 'Rigorous Testing',
-      description: 'End-to-end quality assurance testing across all devices and edge cases to guarantee zero glitches at launch.',
-      highlight: 'Cross-device & automated QA',
-      side: 'right',
-      icon: (
-        <svg className="w-6 h-6 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-      )
-    },
-    {
-      number: '5',
-      title: 'Launch & Deploy',
-      description: 'Seamless deployment to production servers with optimized performance metrics, ready for your users.',
-      highlight: 'CI/CD pipeline & live deployment',
-      side: 'right',
-      icon: (
-        <svg className="w-6 h-6 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-        </svg>
-      )
-    },
-    {
-      number: '6',
-      title: 'Ongoing Support',
-      description: 'Continuous monitoring, updates, and optimization to keep your system scaling smoothly alongside your business.',
-      highlight: 'Performance updates & monitoring',
-      side: 'right',
-      icon: (
-        <svg className="w-6 h-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
-      )
-    },
+    { number: '01', title: 'Free Consultation', tagline: 'Architecture Discovery', description: 'We dive deep into your business goals, target audience, and system requirements to map out the perfect digital architecture.', side: 'left', icon: 'bi-chat-left-dots' },
+    { number: '02', title: 'Planning & Strategy', tagline: 'Wireframes & Timelines', description: 'Crafting detailed wireframes, user journeys, and project roadmaps to ensure exact alignment before a single line of code is written.', side: 'left', icon: 'bi-map' },
+    { number: '03', title: 'Development', tagline: 'Production Codebase', description: 'Our team builds your high-performing web application using modern, scalable tech stacks with highly optimized, clean code patterns.', side: 'left', icon: 'bi-code-slash' },
+    { number: '04', title: 'Rigorous Testing', tagline: 'Quality Assurance', description: 'End-to-end quality assurance testing across all target devices and intense edge cases to guarantee zero glitches at public launch.', side: 'right', icon: 'bi-shield-check' },
+    { number: '05', title: 'Launch & Deploy', tagline: 'Live Production', description: 'Seamless deployment to production servers with optimized cloud delivery metrics, fully ready for scaling to your active user base.', side: 'right', icon: 'bi-send' },
+    { number: '06', title: 'Ongoing Support', tagline: 'Scale & Monitor', description: 'Continuous server monitoring, routine modern security updates, and performance optimization to keep your system scaling smoothly.', side: 'right', icon: 'bi-lightning' },
   ];
 
-  const leftSteps = steps.filter(s => s.side === 'left');
-  const rightSteps = steps.filter(s => s.side === 'right');
+  // Automatic Cycle Effect (paused when holding)
+  useEffect(() => {
+    if (isHolding) return;
+    
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % steps.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [steps.length, isHolding]);
+
+  // Handle the 5-second hold when a user interacts
+  useEffect(() => {
+    if (!isHolding) return;
+
+    const timeout = setTimeout(() => {
+      setIsHolding(false);
+    }, 5000);
+
+    return () => clearTimeout(timeout);
+  }, [isHolding]);
 
   return (
-    <section id="workflow" className="relative h-auto bg-white py-16 md:py-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-12 relative z-10">
+    <section id='workflow' className="py-24 bg-gradient-to-b from-white via-zinc-50/30 to-white overflow-hidden">
+      {/* Decorative Minimalist Background */}
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Header Section */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+        {/* Updated Header Section */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16">
           <div>
-            <p className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase text-[#4f39f6] bg-indigo-50 mb-4">
-              Our Process
+            <p className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase text-[#4f39f6] mb-4">
+              My Methodology
             </p>
-            <h2 className="reveal-trigger font-sans font-extrabold text-4xl md:text-5xl tracking-tight leading-tight mb-4 bg-gradient-to-tr from-[#4f39f6] via-[#38bdf8] to-[#94a3b8] bg-clip-text text-transparent">
-              How We Build Your System
+            <h2 className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-75 font-sans font-extrabold text-4xl md:text-5xl tracking-tight leading-tight mb-4 bg-gradient-to-tr from-[#4f39f6] via-[#38bdf8] to-[#94a3b8] bg-clip-text text-transparent !opacity-100 !translate-y-0">
+              The Development Journey
             </h2>
             <p className="text-base text-zinc-600 max-w-2xl font-normal leading-relaxed">
-              From initial architecture strategy to final live deployment, I follow a <span className="text-[#4f39f6] font-bold">structured, agile development workflow</span> engineered to guarantee technical precision.
+              A precision engineered <span className="bg-gradient-to-r from-[#4f39f6] to-[#60a5fa] bg-clip-text text-transparent font-extrabold tracking-tight">workflow designed</span> to take your vision from initial concept to a scalable, <span className="bg-gradient-to-r from-[#4f39f6] to-[#60a5fa] bg-clip-text text-transparent font-extrabold tracking-tight">live product</span> with zero friction.
             </p>
           </div>
         </div>
 
-        {/* Desktop Hub & Spoke Grid View */}
-        <div className="hidden lg:grid grid-cols-12 gap-4 items-center relative min-h-[600px]">
+
+       {/*  <div className="text-center mb-20 md:mb-28 flex flex-col items-center">
+          <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase text-sky-600 bg-sky-100/50 mb-6 ring-1 ring-sky-200">
+            Our Methodology
+          </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight text-slate-900">
+            The Development Journey
+          </h2>
+          <p className="text-base md:text-lg text-slate-500 max-w-2xl mx-auto px-4 leading-relaxed font-normal">
+            A precision-engineered workflow designed to take your vision from initial concept to a scalable, live product with zero friction.
+          </p>
+        </div> */}
+
+        {/* Desktop Hub & Spoke View */}
+        <div className="hidden lg:grid grid-cols-12 gap-8 items-center max-w-6xl mx-auto mb-16">
           
-          {/* Background Circuit Vector Lines */}
-          <div className="absolute inset-0 pointer-events-none z-0">
-            <svg className="w-full h-full text-zinc-200" viewBox="0 0 1200 600" fill="none" stroke="currentColor" strokeWidth="2">
-              {/* Left Side Circuits */}
-              <path d="M 280 100 L 450 100 L 450 300 L 520 300" strokeDasharray="4 4" />
-              <path d="M 280 300 L 520 300" />
-              <path d="M 280 500 L 450 500 L 450 300 L 520 300" strokeDasharray="4 4" />
-              
-              {/* Right Side Circuits */}
-              <path d="M 920 100 L 750 100 L 750 300 L 680 300" strokeDasharray="4 4" />
-              <path d="M 920 300 L 680 300" />
-              <path d="M 920 500 L 750 500 L 750 300 L 680 300" strokeDasharray="4 4" />
-            </svg>
-          </div>
+          {/* Left Column */}
+          <div className="col-span-4 flex-col space-y-12 pr-6">
+            {steps.filter(s => s.side === 'left').map((step) => {
+              const idx = steps.findIndex(s => s.number === step.number);
+              const isActive = idx === activeIndex;
+              const isDone = idx < activeIndex;
 
-          {/* LEFT COLUMN: Nodes 1, 2, 3 */}
-          <div className="col-span-4 space-y-16 z-10">
-            {leftSteps.map((step) => {
-              const globalIdx = steps.indexOf(step);
-              const isActive = globalIdx === activeIndex;
               return (
-                <div 
-                  key={step.number} 
-                  onMouseEnter={() => setActiveIndex(globalIdx)}
-                  className="flex items-center justify-end gap-6 group cursor-pointer"
-                >
-                  <div className="text-right max-w-xs transition-all duration-300 transform group-hover:-translate-x-1">
-                    <h3 className="font-bold text-zinc-900 text-lg mb-1">{step.title}</h3>
-                    <p className="text-zinc-500 text-xs leading-relaxed line-clamp-2">{step.description}</p>
-                  </div>
-                  <div className={`relative flex-shrink-0 w-16 h-16 rounded-full bg-white border-2 flex items-center justify-center transition-all duration-500 ${
-                    isActive ? 'border-sky-400 shadow-[0_0_20px_rgba(56,189,248,0.6)] scale-110' : 'border-zinc-100 shadow-sm'
-                  }`}>
-                    {step.icon}
-                    <span className="absolute -top-1.5 -left-1.5 bg-zinc-900 text-white text-xs font-bold font-mono w-6 h-6 rounded-full flex items-center justify-center">
-                      {step.number}
+                <div key={step.number} className="flex items-center justify-end gap-6">
+                  <div className="text-right">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 block mb-1.5">
+                      {step.tagline}
                     </span>
+                    <h3 className={`font-semibold text-lg transition-colors duration-500 ${isDone ? 'text-emerald-600' : isActive ? 'text-slate-900' : 'text-slate-400'}`}>
+                      {step.title}
+                    </h3>
                   </div>
+                  <motion.div 
+                    animate={{ scale: isActive ? 1.1 : 1 }} 
+                    className={`relative w-14 h-14 rounded-2xl flex items-center justify-center border transition-all duration-500 z-10 ${
+                      isDone ? 'bg-emerald-500 border-emerald-500 text-white shadow-lg shadow-emerald-200/50' 
+                      : isActive ? 'bg-black border-black text-white shadow-xl shadow-slate-300' 
+                      : 'bg-white border-slate-200 text-slate-400 shadow-sm'
+                    }`}
+                  >
+                    <i className={`bi ${isDone ? 'bi-check-lg text-2xl' : step.icon} ${!isDone && 'text-xl'}`}></i>
+                  </motion.div>
                 </div>
               );
             })}
           </div>
 
-          {/* CENTER ARCHITECTURE HUB WITH YOUR LOGO DESIGN */}
-          <div className="col-span-4 flex justify-center items-center z-10">
-            <div className="relative w-48 h-48 rounded-full bg-gradient-to-b from-slate-50 to-white shadow-xl border border-zinc-100 flex items-center justify-center group">
-              <div className="absolute inset-0 rounded-full bg-sky-100/30 blur-xl group-hover:bg-indigo-100/40 transition-all duration-700" />
-              
-              {/* Integrated Core Animated Brand Logo Block - Removed Square Box */}
-              <div className="flex items-center scale-[2.2]">
-                <div className="w-9 h-9 relative z-10 transition-transform duration-200 active:scale-95 flex items-center justify-center overflow-hidden">
-                  <div className="absolute inset-1 bg-gradient-to-tr from-[#4f39f6] via-[#60a5fa] to-[#cbd5e1] rounded-[30%_70%_70%_30%_/_50%_40%_60%_50%] animate-[spin_20s_linear_infinite]"></div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          {/* RIGHT COLUMN: Nodes 4, 5, 6 */}
-          <div className="col-span-4 space-y-16 z-10">
-            {rightSteps.map((step) => {
-              const globalIdx = steps.indexOf(step);
-              const isActive = globalIdx === activeIndex;
-              return (
-                <div 
-                  key={step.number} 
-                  onMouseEnter={() => setActiveIndex(globalIdx)}
-                  className="flex items-center justify-start gap-6 group cursor-pointer"
-                >
-                  <div className={`relative flex-shrink-0 w-16 h-16 rounded-full bg-white border-2 flex items-center justify-center transition-all duration-500 ${
-                    isActive ? 'border-sky-400 shadow-[0_0_20px_rgba(56,189,248,0.6)] scale-110' : 'border-zinc-100 shadow-sm'
-                  }`}>
-                    {step.icon}
-                    <span className="absolute -top-1.5 -right-1.5 bg-zinc-900 text-white text-xs font-bold font-mono w-6 h-6 rounded-full flex items-center justify-center">
-                      {step.number}
-                    </span>
-                  </div>
-                  <div className="text-left max-w-xs transition-all duration-300 transform group-hover:translate-x-1">
-                    <h3 className="font-bold text-zinc-900 text-lg mb-1">{step.title}</h3>
-                    <p className="text-zinc-500 text-xs leading-relaxed line-clamp-2">{step.description}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-        </div>
-
-        {/* Mobile View - Re-styled to display all elements cleanly on the left side */}
-        <div className="lg:hidden space-y-8 mt-12 px-2">
-          {steps.map((step) => {
-            const globalIdx = steps.indexOf(step);
-            const isActive = globalIdx === activeIndex;
-
-            return (
-              <div 
-                key={step.number} 
-                onClick={() => setActiveIndex(globalIdx)}
-                className="flex flex-row items-center justify-start gap-5 text-left group cursor-pointer transition-all duration-300"
+          {/* Center Hub with 3D Flip Animation & Professional Black Card */}
+          <div className="col-span-4 relative z-20" style={{ perspective: '1400px' }}>
+            <AnimatePresence mode="wait">
+              <motion.div 
+                key={activeIndex} 
+                initial={{ opacity: 0, rotateX: -90 }} 
+                animate={{ opacity: 1, rotateX: 0 }} 
+                exit={{ opacity: 0, rotateX: 90 }} 
+                transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }} 
+                className="relative w-full aspect-square max-w-[340px] mx-auto rounded-[2rem] bg-black p-10 border border-white/10 border-t-0 shadow-[0_20px_60px_-10px_rgba(14,165,233,0.4)] flex flex-col items-center justify-center text-center overflow-hidden"
               >
-                {/* Circle Icon and Number Badge (Locked to Left Side) */}
-                <div className={`relative flex-shrink-0 w-16 h-16 rounded-full bg-white border-2 flex items-center justify-center transition-all duration-500 ${
-                  isActive ? 'border-sky-400 shadow-[0_0_15px_rgba(56,189,248,0.5)] scale-105' : 'border-zinc-200 shadow-sm'
-                }`}>
-                  {step.icon}
-                  <span className="absolute -top-1.5 -left-1.5 bg-zinc-900 text-white text-xs font-bold font-mono w-6 h-6 rounded-full flex items-center justify-center">
-                    {step.number}
-                  </span>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-b from-white/[0.03] to-transparent pointer-events-none"></div>
 
-                {/* Text Block (Aligned Left next to Icon) */}
-                <div className={`max-w-[70%] transition-all duration-300 ${
-                  isActive ? 'scale-[1.02]' : 'opacity-85'
-                }`}>
-                  <h3 className={`font-bold text-base mb-1 transition-colors ${
-                    isActive ? 'text-[#4f39f6]' : 'text-zinc-900'
-                  }`}>
-                    {step.title}
-                  </h3>
-                  <p className="text-zinc-500 text-xs leading-relaxed line-clamp-3">
-                    {step.description}
+                <div className="flex flex-col items-center relative z-10 w-full">
+                  <span className="text-8xl font-black text-white/5 mb-6 block font-sans tracking-tighter absolute -top-8 -z-10 select-none">
+                    {steps[activeIndex].number}
+                  </span>
+                  <div className="w-12 h-12 rounded-full bg-sky-500/10 flex items-center justify-center mb-6 border border-sky-500/20 text-sky-400">
+                    <i className={`bi ${steps[activeIndex].icon} text-xl`}></i>
+                  </div>
+                  <h4 className="text-2xl font-bold text-white mb-4 tracking-tight">
+                    {steps[activeIndex].title}
+                  </h4>
+                  <p className="text-slate-400 text-sm leading-relaxed font-normal px-2">
+                    {steps[activeIndex].description}
                   </p>
                 </div>
-              </div>
-            );
-          })}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Right Column */}
+          <div className="col-span-4 flex-col space-y-12 pl-6">
+            {steps.filter(s => s.side === 'right').map((step) => {
+              const idx = steps.findIndex(s => s.number === step.number);
+              const isActive = idx === activeIndex;
+              const isDone = idx < activeIndex;
+
+              return (
+                <div key={step.number} className="flex items-center justify-start gap-6">
+                  <motion.div 
+                    animate={{ scale: isActive ? 1.1 : 1 }} 
+                    className={`relative w-14 h-14 rounded-2xl flex items-center justify-center border transition-all duration-500 z-10 ${
+                      isDone ? 'bg-emerald-500 border-emerald-500 text-white shadow-lg shadow-emerald-200/50' 
+                      : isActive ? 'bg-black border-black text-white shadow-xl shadow-slate-300' 
+                      : 'bg-white border-slate-200 text-slate-400 shadow-sm'
+                    }`}
+                  >
+                    <i className={`bi ${isDone ? 'bi-check-lg text-2xl' : step.icon} ${!isDone && 'text-xl'}`}></i>
+                  </motion.div>
+                  <div className="text-left">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 block mb-1.5">
+                      {step.tagline}
+                    </span>
+                    <h3 className={`font-semibold text-lg transition-colors duration-500 ${isDone ? 'text-emerald-600' : isActive ? 'text-slate-900' : 'text-slate-400'}`}>
+                      {step.title}
+                    </h3>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Mobile View Structure */}
+        <div className="lg:hidden mt-8 max-w-sm mx-auto relative z-20">
+          
+          {/* Clickable Icon Navigation Header */}
+          <div className="flex justify-between items-center mb-6 gap-2 bg-white p-3 rounded-2xl shadow-sm border border-slate-100">
+            {steps.map((step, idx) => {
+              const isActive = idx === activeIndex;
+              const isDone = idx < activeIndex;
+              return (
+                <button
+                  key={step.number}
+                  onClick={() => {
+                    setActiveIndex(idx);
+                    setIsHolding(true);
+                  }}
+                  className={`relative w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-300 outline-none ${
+                    isActive 
+                      ? 'bg-black text-white shadow-md scale-110' 
+                      : 'bg-slate-100 text-slate-400 active:bg-slate-200'
+                  }`}
+                >
+                  <i className={`bi ${step.icon} text-lg`}></i>
+                  {isDone && (
+                    <span className="absolute top-0 right-0 -mt-2 -mr-2 w-4 h-4 bg-emerald-500 text-white rounded-full flex items-center justify-center text-[10px] font-bold shadow-sm ring-2 ring-white z-30 animate-fade-in">
+                      <i className="bi bi-check-lg"></i>
+                    </span>
+                  )}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* 3D Flipping Card */}
+          <div style={{ perspective: '1400px' }}>
+            <AnimatePresence mode="wait">
+              <motion.div 
+                key={activeIndex} 
+                initial={{ opacity: 0, rotateX: -90 }} 
+                animate={{ opacity: 1, rotateX: 0 }} 
+                exit={{ opacity: 0, rotateX: 90 }} 
+                transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }} 
+                className="relative w-full aspect-square max-w-[340px] mx-auto rounded-[2rem] bg-black p-10 border border-white/10 border-t-0 shadow-[0_20px_60px_-10px_rgba(14,165,233,0.4)] flex flex-col items-center justify-center text-center overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-b from-white/[0.03] to-transparent pointer-events-none"></div>
+
+                <div className="flex flex-col items-center relative z-10 w-full">
+                  <span className="text-8xl font-black text-white/5 mb-6 block font-sans tracking-tighter absolute -top-8 -z-10 select-none">
+                    {steps[activeIndex].number}
+                  </span>
+                  <div className="w-12 h-12 rounded-full bg-sky-500/10 flex items-center justify-center mb-6 border border-sky-500/20 text-sky-400">
+                    <i className={`bi ${steps[activeIndex].icon} text-xl`}></i>
+                  </div>
+                  <h4 className="text-2xl font-bold text-white mb-4 tracking-tight">
+                    {steps[activeIndex].title}
+                  </h4>
+                  <p className="text-slate-400 text-sm leading-relaxed font-normal px-2">
+                    {steps[activeIndex].description}
+                  </p>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
 
       </div>
