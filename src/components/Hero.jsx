@@ -4,16 +4,13 @@ import { FileText, Star, User } from 'lucide-react';
 export default function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center pt-24 pb-10 sm:pt-28 sm:pb-16 lg:py-16 xl:py-24 overflow-hidden bg-white selection:bg-indigo-500/30">
-      {/* Background Blobs */}
       <div className="absolute top-10 right-[-10%] w-[280px] h-[280px] sm:w-[500px] sm:h-[500px] lg:w-[600px] lg:h-[600px] bg-gradient-to-tr from-indigo-50/30 to-purple-500/0 rounded-full blur-[60px] sm:blur-[120px] pointer-events-none animate-[pulse_8s_infinite_ease-in-out]" aria-hidden="true"></div>
       <div className="absolute bottom-10 left-[-10%] w-[200px] h-[200px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] bg-zinc-100 rounded-full blur-[50px] sm:blur-[100px] pointer-events-none animate-[pulse_10s_infinite_ease-in-out_1s]" aria-hidden="true"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 xs:gap-10 lg:gap-6 xl:gap-16 items-center">
           
-          {/* Left Column: Content */}
           <div className="lg:col-span-7 xl:col-span-6 text-left flex flex-col justify-center order-2 lg:order-1 mt-4 xs:mt-6 lg:mt-0">
-            {/* Friendly Identifier Badge */}
             <div className="mb-4">
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-zinc-100 text-zinc-800">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -21,7 +18,6 @@ export default function Hero() {
               </span>
             </div>
 
-            {/* Value-Driven Headline */}
             <h1 className="font-sans font-black text-2xl xs:text-4xl sm:text-5xl lg:text-4xl xl:text-5xl min-[1440px]:text-6xl leading-[1.2] xs:leading-[1.15] sm:leading-[1.1] tracking-tight text-zinc-900 mb-4 sm:mb-6">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4f39f6] via-[#38bdf8] to-[#9333ea]">Save 10+</span> Hours Every Week with a <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4f39f6] via-[#38bdf8] to-[#9333ea]">Custom CRM Built</span> for Your Business
             </h1>
@@ -29,7 +25,6 @@ export default function Hero() {
               Still tracking leads, projects, or inventory in spreadsheets? I build <strong className="font-semibold text-zinc-900">Custom CRM Systems & Eliminate Repetitive Manual Work</strong> that eliminate <strong className="font-semibold text-zinc-900">repetitive work, reduce errors,</strong> and help your team <strong className="font-semibold text-zinc-900">scale with confidence.</strong>
             </p>
 
-            {/* Conversion Optimised CTAs */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center">
               <a 
                 href="#contact" 
@@ -55,9 +50,7 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Prominent Trust Section */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-8 sm:mt-16 pt-6 sm:pt-8 border-t border-zinc-100">
-              {/* Injected Style Block for Continuous 3D Loop Animation */}
               <style dangerouslySetInnerHTML={{__html: `
                 @keyframes continuousCardFlip {
                   0%, 40% {
@@ -110,7 +103,6 @@ export default function Hero() {
                   border-radius: 1rem;
                   padding: 0.4rem;
                 }
-                /* Clean depth layers */
                 .flip-card-front * {
                   transform: translateZ(30px);
                   transform-style: preserve-3d;
@@ -122,7 +114,6 @@ export default function Hero() {
                 .flip-card-back {
                   transform: rotateY(180deg);
                 }
-                /* Responsive Badge Scaling rules to prevent mobile clipping */
                 @media (max-width: 359px) {
                   .avatar-badge {
                     transform: scale(0.78) !important;
@@ -135,7 +126,6 @@ export default function Hero() {
                 }
               `}} />
 
-              {/* Card 1 */}
               <div className="flip-container">
                 <div className="flip-card-inner">
                   <div className="flip-card-front bg-gradient-to-br from-indigo-50/90 via-white to-indigo-50/40 border border-indigo-100 shadow-[0_10px_20px_-5px_rgba(79,57,246,0.1)]">
@@ -151,7 +141,6 @@ export default function Hero() {
                 </div>
               </div>
               
-              {/* Card 2 */}
               <div className="flip-container">
                 <div className="flip-card-inner" style={{ animationDelay: '0.8s' }}>
                   <div className="flip-card-front bg-gradient-to-br from-emerald-50/90 via-white to-emerald-50/40 border border-emerald-100 shadow-[0_10px_20px_-5px_rgba(16,185,129,0.1)]">
@@ -167,7 +156,6 @@ export default function Hero() {
                 </div>
               </div>
               
-              {/* Card 3 */}
               <div className="flip-container">
                 <div className="flip-card-inner" style={{ animationDelay: '1.6s' }}>
                   <div className="flip-card-front bg-gradient-to-br from-purple-50/90 via-white to-purple-50/40 border border-purple-100 shadow-[0_10px_20px_-5px_rgba(147,51,234,0.1)]">
@@ -183,7 +171,6 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Card 4 */}
               <div className="flip-container">
                 <div className="flip-card-inner" style={{ animationDelay: '2.4s' }}>
                   <div className="flip-card-front bg-gradient-to-br from-amber-50/90 via-white to-amber-50/40 border border-amber-100 shadow-[0_10px_20px_-5px_rgba(245,158,11,0.1)]">
@@ -206,9 +193,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Avatar Graphic */}
           <div className="lg:col-span-5 xl:col-span-6 flex justify-center items-center order-1 lg:order-2 relative select-none px-2 xs:px-4 sm:px-0">
-            {/* Dots Decorations */}
             <div className="absolute top-4 right-8 lg:right-12 opacity-30 pointer-events-none hidden sm:grid grid-cols-6 gap-2" aria-hidden="true">
               {[...Array(24)].map((_, i) => <div key={i} className="w-1.5 h-1.5 bg-zinc-400 rounded-full"></div>)}
             </div>
@@ -216,9 +201,7 @@ export default function Hero() {
               {[...Array(16)].map((_, i) => <div key={i} className="w-1.5 h-1.5 bg-zinc-400 rounded-full"></div>)}
             </div>
 
-            {/* Avatar Frame Box */}
             <div className="relative w-full max-w-[240px] xs:max-w-[280px] aspect-square sm:max-w-[360px] md:max-w-[400px] lg:max-w-full lg:w-[420px] lg:h-[420px] flex items-center justify-center mb-6 xs:mb-8 sm:mb-6 lg:mb-0">
-              {/* Graphical Circular Background Elements */}
               <div className="absolute inset-0 bg-gradient-to-tr from-[#4f39f6] via-[#38bdf8] to-[#94a3b8] rounded-[50%_50%_30%_70%_/_40%_60%_40%_60%] mix-blend-multiply opacity-20 scale-105 animate-[spin_30s_linear_infinite_reverse]"></div>
               <div className="absolute inset-0 bg-gradient-to-tr from-[#4f39f6] via-[#60a5fa] to-[#cbd5e1] rounded-[30%_70%_70%_30%_/_50%_40%_60%_50%] animate-[spin_10s_linear_infinite]"></div>
               
@@ -231,9 +214,6 @@ export default function Hero() {
                 />
               </div>
 
-              {/* Floating Badges */}
-              
-              {/* Badge 1: Completed Projects */}
               <div className="avatar-badge absolute top-0 -left-2 xs:-left-4 sm:-left-6 bg-white border border-zinc-100/80 p-2 sm:p-3 rounded-xl sm:rounded-2xl shadow-[0_15px_30px_rgba(79,57,246,0.12)] scale-90 sm:scale-100 transition-all duration-300 flex items-center gap-1.5 sm:gap-2.5 animate-[bounce_3s_infinite_ease-in-out]">
                 <div className="w-6 h-6 sm:w-9 sm:h-9 rounded-lg bg-[#4f39f6]/10 flex items-center justify-center text-[#4f39f6]">
                   <FileText className="w-3.5 h-3.5 sm:w-4.5 sm:h-4.5" strokeWidth={2} />
@@ -244,7 +224,6 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Badge 2: Satisfaction */}
               <div className="avatar-badge absolute top-1/4 -right-2 xs:-right-4 sm:-right-8 bg-white border border-zinc-100/80 p-2 sm:p-3 rounded-xl sm:rounded-2xl shadow-[0_15px_30px_rgba(245,158,11,0.12)] scale-90 sm:scale-100 transition-all duration-300 flex items-center gap-1.5 sm:gap-2.5 animate-[bounce_3s_infinite_ease-in-out_1s]">
                 <div className="w-6 h-6 sm:w-9 sm:h-9 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-500">
                   <Star className="w-3.5 h-3.5 sm:w-4.5 sm:h-4.5 fill-current" strokeWidth={2} />
@@ -255,7 +234,6 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Badge 3: Full Stack Developer */}
               <div className="avatar-badge absolute -bottom-2 sm:-bottom-4 bg-white border border-zinc-100/85 p-2 sm:p-3 rounded-xl sm:rounded-2xl shadow-[0_20px_40px_rgba(147,51,234,0.15)] scale-90 sm:scale-100 transition-all duration-300 flex items-center gap-2 sm:gap-3 min-w-[125px] xs:min-w-[140px] sm:min-w-[190px] animate-[bounce_3s_infinite_ease-in-out_0.5s]">
                 <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600 shrink-0">
                   <User className="w-3.5 h-3.5 sm:w-4.5 sm:h-4.5" strokeWidth={2} />
