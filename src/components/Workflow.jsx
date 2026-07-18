@@ -14,7 +14,6 @@ export default function Workflow() {
     { number: '06', title: 'Ongoing Support', tagline: 'Scale & Monitor', description: 'Continuous server monitoring, routine modern security updates, and performance optimization to keep your system scaling smoothly.', side: 'right', icon: 'bi-lightning' },
   ];
 
-  // Automatic Cycle Effect (paused when holding)
   useEffect(() => {
     if (isHolding) return;
     
@@ -24,37 +23,34 @@ export default function Workflow() {
     return () => clearInterval(timer);
   }, [steps.length, isHolding]);
 
-  // Handle the 5-second hold when a user interacts
   useEffect(() => {
     if (!isHolding) return;
 
     const timeout = setTimeout(() => {
       setIsHolding(false);
-    }, 5000);
+    }, 3000);
 
     return () => clearTimeout(timeout);
   }, [isHolding]);
 
   return (
-    <section id='workflow' className="py-24 bg-gradient-to-b from-white via-zinc-50/30 to-white overflow-hidden">
-      {/* Decorative Minimalist Background */}
-
+    <section id='workflow' className="relative py-28 bg-gradient-to-b from-white via-zinc-50/30 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Updated Header Section */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 md:mb-16">
           <div>
             <p className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase text-[#4f39f6] mb-4">
               My Methodology
             </p>
-            <h2 className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-75 font-sans font-extrabold text-4xl md:text-5xl tracking-tight leading-tight mb-4 bg-gradient-to-tr from-[#4f39f6] via-[#38bdf8] to-[#94a3b8] bg-clip-text text-transparent !opacity-100 !translate-y-0">
+            <h2 className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-75 font-sans font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight mb-4 bg-gradient-to-tr from-[#4f39f6] via-[#38bdf8] to-[#94a3b8] bg-clip-text text-transparent !opacity-100 !translate-y-0">
               How We'll Build Your Project
             </h2>
-            <p className="text-base text-zinc-600 max-w-2xl font-normal leading-relaxed">
+            <p className="text-sm sm:text-base text-zinc-600 max-w-2xl font-normal leading-relaxed">
               A precision engineered <span className="bg-gradient-to-r from-[#4f39f6] to-[#60a5fa] bg-clip-text text-transparent font-extrabold tracking-tight">workflow designed</span> to take your vision from initial concept to a scalable, <span className="bg-gradient-to-r from-[#4f39f6] to-[#60a5fa] bg-clip-text text-transparent font-extrabold tracking-tight">live product</span> with zero friction.
             </p>
           </div>
         </div>
+
         <div className="hidden lg:grid grid-cols-12 gap-8 items-center max-w-6xl mx-auto mb-16">
           <div className="col-span-4 flex-col space-y-12 pr-6">
             {steps.filter(s => s.side === 'left').map((step) => {
@@ -87,7 +83,6 @@ export default function Workflow() {
             })}
           </div>
 
-          {/* Center Hub with 3D Flip Animation & Professional Black Card */}
           <div className="col-span-4 relative z-20" style={{ perspective: '1400px' }}>
             <AnimatePresence mode="wait">
               <motion.div 
@@ -118,7 +113,6 @@ export default function Workflow() {
             </AnimatePresence>
           </div>
 
-          {/* Right Column */}
           <div className="col-span-4 flex-col space-y-12 pl-6">
             {steps.filter(s => s.side === 'right').map((step) => {
               const idx = steps.findIndex(s => s.number === step.number);
@@ -151,11 +145,8 @@ export default function Workflow() {
           </div>
         </div>
 
-        {/* Mobile View Structure */}
-        <div className="lg:hidden mt-8 max-w-sm mx-auto relative z-20">
-          
-          {/* Clickable Icon Navigation Header */}
-          <div className="flex justify-between items-center mb-6 gap-2 bg-white p-3 rounded-2xl shadow-sm border border-slate-100">
+        <div className="lg:hidden mt-6 w-full max-w-sm mx-auto relative z-20">
+          <div className="flex justify-between items-center mb-6 gap-1.5 sm:gap-2 bg-white p-2 sm:p-3 rounded-2xl shadow-sm border border-slate-100 overflow-x-auto no-scrollbar">
             {steps.map((step, idx) => {
               const isActive = idx === activeIndex;
               const isDone = idx < activeIndex;
@@ -166,15 +157,15 @@ export default function Workflow() {
                     setActiveIndex(idx);
                     setIsHolding(true);
                   }}
-                  className={`relative w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-300 outline-none ${
+                  className={`relative w-9 h-9 sm:w-11 sm:h-11 flex-shrink-0 rounded-xl flex items-center justify-center transition-all duration-300 outline-none ${
                     isActive 
-                      ? 'bg-black text-white shadow-md scale-110' 
+                      ? 'bg-black text-white shadow-md scale-105' 
                       : 'bg-slate-100 text-slate-400 active:bg-slate-200'
                   }`}
                 >
-                  <i className={`bi ${step.icon} text-lg`}></i>
+                  <i className={`bi ${step.icon} text-base sm:text-lg`}></i>
                   {isDone && (
-                    <span className="absolute top-0 right-0 -mt-2 -mr-2 w-4 h-4 bg-emerald-500 text-white rounded-full flex items-center justify-center text-[10px] font-bold shadow-sm ring-2 ring-white z-30 animate-fade-in">
+                    <span className="absolute -top-1 -right-1 sm:top-0 sm:right-0 w-3.5 h-3.5 sm:w-4 sm:h-4 bg-emerald-500 text-white rounded-full flex items-center justify-center text-[8px] sm:text-[10px] font-bold shadow-sm ring-2 ring-white z-30 animate-fade-in">
                       <i className="bi bi-check-lg"></i>
                     </span>
                   )}
@@ -183,7 +174,6 @@ export default function Workflow() {
             })}
           </div>
 
-          {/* 3D Flipping Card */}
           <div style={{ perspective: '1400px' }}>
             <AnimatePresence mode="wait">
               <motion.div 
@@ -192,21 +182,21 @@ export default function Workflow() {
                 animate={{ opacity: 1, rotateX: 0 }} 
                 exit={{ opacity: 0, rotateX: 90 }} 
                 transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }} 
-                className="relative w-full aspect-square max-w-[340px] mx-auto rounded-[2rem] bg-black p-10 border border-white/10 border-t-0 shadow-[0_20px_60px_-10px_rgba(14,165,233,0.4)] flex flex-col items-center justify-center text-center overflow-hidden"
+                className="relative w-full min-h-[320px] sm:aspect-square max-w-[340px] mx-auto rounded-[2rem] bg-black p-6 sm:p-10 border border-white/10 border-t-0 shadow-[0_20px_60px_-10px_rgba(14,165,233,0.4)] flex flex-col items-center justify-center text-center overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-white/[0.03] to-transparent pointer-events-none"></div>
 
                 <div className="flex flex-col items-center relative z-10 w-full">
-                  <span className="text-8xl font-black text-white/5 mb-6 block font-sans tracking-tighter absolute -top-8 -z-10 select-none">
+                  <span className="text-7xl sm:text-8xl font-black text-white/5 mb-4 sm:mb-6 block font-sans tracking-tighter absolute -top-6 sm:-top-8 -z-10 select-none">
                     {steps[activeIndex].number}
                   </span>
-                  <div className="w-12 h-12 rounded-full bg-sky-500/10 flex items-center justify-center mb-6 border border-sky-500/20 text-sky-400">
-                    <i className={`bi ${steps[activeIndex].icon} text-xl`}></i>
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-sky-500/10 flex items-center justify-center mb-4 sm:mb-6 border border-sky-500/20 text-sky-400">
+                    <i className={`bi ${steps[activeIndex].icon} text-lg sm:text-xl`}></i>
                   </div>
-                  <h4 className="text-2xl font-bold text-white mb-4 tracking-tight">
+                  <h4 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 tracking-tight">
                     {steps[activeIndex].title}
                   </h4>
-                  <p className="text-slate-400 text-sm leading-relaxed font-normal px-2">
+                  <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-normal px-1 sm:px-2">
                     {steps[activeIndex].description}
                   </p>
                 </div>
