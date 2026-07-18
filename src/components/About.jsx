@@ -116,7 +116,7 @@ export default function About() {
               Engineering Value & ROI
             </p>
             <h2 className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-75 font-sans font-extrabold text-4xl md:text-5xl tracking-tight leading-tight mb-6 bg-gradient-to-tr from-[#4f39f6] via-[#38bdf8] to-[#60a5fa] bg-clip-text text-transparent">
-              Turning complex business logic into high-performing web systems.
+              Turning complex business logic into high-performing web systems
             </h2>
             
             <p className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-150 text-zinc-600 font-normal text-base leading-relaxed mb-4">
