@@ -38,14 +38,44 @@ export default function About() {
   return (
     <section id="about" className="relative py-28 bg-zinc-50 border-t border-b border-zinc-100 overflow-hidden">
       <style dangerouslySetInnerHTML={{__html: `
-        @keyframes float-orbit {
-          0% { transform: rotate(0deg) translateY(var(--orbit-radius, 120px)) rotate(0deg) scale(0.9); z-index: 1; }
-          25% { z-index: 5; transform: rotate(90deg) translateY(var(--orbit-radius, 120px)) rotate(-90deg) scale(0.95); }
-          50% { transform: rotate(180deg) translateY(var(--orbit-radius, 120px)) rotate(-180deg) scale(0.9); z-index: 1; }
-          75% { transform: rotate(270deg) translateY(var(--orbit-radius, 120px)) rotate(-270deg) scale(0.7); z-index: 1; }
-          100% { transform: rotate(360deg) translateY(var(--orbit-radius, 120px)) rotate(--360deg) scale(0.9); z-index: 1; }
+        :root {
+          --base-radius: 120px;
+          --radius-step: 20px;
         }
-        .orbiting-skill { animation: float-orbit var(--orbit-duration, 25s) linear infinite; }
+        @media (min-width: 640px) {
+          :root {
+            --base-radius: 155px;
+            --radius-step: 35px;
+          }
+        }
+        @keyframes float-orbit {
+          0% { 
+            transform: rotate(0deg) translateY(var(--orbit-radius, 120px)) rotate(0deg) scale(0.9); 
+            z-index: 2; 
+          }
+          25% { 
+            transform: rotate(90deg) translateY(var(--orbit-radius, 120px)) rotate(-90deg) scale(1.05); 
+            z-index: 5; 
+          }
+          50% { 
+            transform: rotate(180deg) translateY(var(--orbit-radius, 120px)) rotate(-180deg) scale(0.9); 
+            z-index: 2; 
+          }
+          75% { 
+            transform: rotate(270deg) translateY(var(--orbit-radius, 120px)) rotate(-270deg) scale(0.75); 
+            z-index: 1; 
+          }
+          100% { 
+            transform: rotate(360deg) translateY(var(--orbit-radius, 120px)) rotate(-360deg) scale(0.9); 
+            z-index: 2; 
+          }
+        }
+        .orbiting-skill { 
+          animation: float-orbit var(--orbit-duration, 25s) linear infinite; 
+          will-change: transform;
+          transform-style: preserve-3d;
+          backface-visibility: hidden;
+        }
         .orbiting-skill:hover { animation-play-state: paused; }
       `}} />
 
@@ -78,7 +108,6 @@ export default function About() {
 
             <div className="absolute inset-0 pointer-events-none z-10" style={{ perspective: '1000px' }}>
               {skills.map((skill, index) => {
-                const orbitRadius = 155 + (index % 3) * 35;
                 const duration = 22 + (index % 4) * 4;
                 const delay = -(index * (duration / skills.length));
                 const isSelected = selectedSkill === skill;
@@ -94,7 +123,7 @@ export default function About() {
                         : 'bg-white border-[#4f39f6]/10 text-zinc-700 hover:border-[#4f39f6] hover:bg-[#4f39f6] hover:text-white'
                     }`}
                     style={{
-                      '--orbit-radius': `${orbitRadius}px`,
+                      '--orbit-radius': `calc(var(--base-radius) + ${(index % 3)} * var(--radius-step))`,
                       '--orbit-duration': `${duration}s`,
                       animationDelay: `${delay}s`,
                     }}
@@ -179,6 +208,7 @@ export default function About() {
                 const isSelected = selectedSkill === skill;
                 return (
                   <span 
+                    key={skill}
                     className={`text-xs font-medium px-3 py-1.5 rounded-xl shadow-sm transition-all duration-200  border bg-white border-zinc-200 text-zinc-700 hover:border-[#4f39f6] hover:text-[#4f39f6] hover:bg-[#4f39f6]/5'
                     }`}
                   >
