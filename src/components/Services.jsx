@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function Services() {
-  // Services organized by high-value business outcomes to maximize lead generation
   const serviceGroups = [
     {
       groupTitle: "Custom Applications & Platforms",
@@ -147,7 +146,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="relative py-20 bg-[#fafafa] overflow-hidden">
+    <section id="services" className="relative py-28 bg-zinc-50 border-t border-b border-zinc-100 overflow-hidden">
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes fadeInUp {
           from { opacity: 0; transform: translateY(24px); }
@@ -158,40 +157,36 @@ export default function Services() {
         }
       `}} />
 
-      {/* Dynamic Background Blurs */}
-      <div className="absolute top-0 left-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-gradient-to-tr from-[#4f39f6]/10 via-[#60a5fa]/10 to-transparent rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-gradient-to-br from-[#ffed4a]/5 via-[#60a5fa]/10 to-[#4f39f6]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-40 pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-[260px] sm:w-[300px] md:w-[500px] h-[260px] sm:h-[300px] md:h-[500px] bg-gradient-to-tr from-[#4f39f6]/10 via-[#60a5fa]/10 to-transparent rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-[320px] sm:w-[400px] md:w-[600px] h-[320px] sm:h-[400px] md:h-[600px] bg-gradient-to-br from-[#ffed4a]/5 via-[#60a5fa]/10 to-[#4f39f6]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:3rem_3rem] sm:bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-40 pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-6 z-10">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 z-10">
         
-        {/* Header Section */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 md:gap-6 mb-10 sm:mb-14 md:mb-16">
           <div>
-            <p className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase text-[#4f39f6] mb-4">
+            <p className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase text-[#4f39f6] mb-3 sm:mb-4">
               Capabilities
             </p>
-            <h2 className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-75 font-sans font-extrabold text-4xl md:text-5xl tracking-tight leading-tight mb-4 bg-gradient-to-tr from-[#4f39f6] via-[#38bdf8] to-[#94a3b8] bg-clip-text text-transparent !opacity-100 !translate-y-0">
+            <h2 className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-75 font-sans font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight mb-4 bg-gradient-to-tr from-[#4f39f6] via-[#38bdf8] to-[#94a3b8] bg-clip-text text-transparent !opacity-100 !translate-y-0">
               Engineered for Business Growth
             </h2>
-            <p className="text-base text-zinc-600 max-w-2xl font-normal leading-relaxed">
+            <p className="text-sm sm:text-base text-zinc-600 max-w-2xl font-normal leading-relaxed">
               I deliver <span className="text-[#4f39f6] font-bold">high-impact digital infrastructure</span> designed natively to optimize manual workflows, scale securely, and turn technical challenges into measurable <span className="bg-gradient-to-r from-[#4f39f6] to-[#60a5fa] bg-clip-text text-transparent font-extrabold tracking-tight">business revenue.</span>
             </p>
           </div>
         </div>
 
-        {/* Grouped Service Display */}
-        <div className="space-y-16 md:space-y-20">
+        <div className="space-y-12 sm:space-y-16 md:space-y-20">
           {serviceGroups.map((group, groupIndex) => (
-            <div key={groupIndex} className="space-y-6 md:space-y-8">
-              {/* Group Title Area */}
-              <div className="border-l-4 border-[#4f39f6] pl-4 max-w-2xl">
-                <h3 className="text-lg md:text-2xl font-black text-zinc-900 tracking-tight">{group.groupTitle}</h3>
-                <p className="text-sm text-zinc-500 mt-1 font-normal">{group.groupSubtitle}</p>
+            <div key={groupIndex} className="space-y-5 sm:space-y-6 md:space-y-8">
+              
+              <div className="border-l-4 border-[#4f39f6] pl-3 sm:pl-4 max-w-2xl">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-black text-zinc-900 tracking-tight">{group.groupTitle}</h3>
+                <p className="text-xs sm:text-sm text-zinc-500 mt-1 font-normal">{group.groupSubtitle}</p>
               </div>
 
-              {/* Mobile-First Grid System */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                 {group.items.map((service, index) => {
                   const gradientColors = itemGradients[(index + groupIndex) % itemGradients.length];
 
@@ -222,16 +217,16 @@ export default function Services() {
                           card.style.transform = `rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
                           card.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
                         }}
-                        className={`h-full bg-white/80 backdrop-blur-sm rounded-3xl p-6 md:p-8 border relative flex flex-col justify-between overflow-hidden transition-all duration-300 ease-out hover:bg-gradient-to-br hover:from-blue-50/30 hover:to-indigo-50/30 hover:shadow-2xl ${
+                        className={`h-full bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 border relative flex flex-col justify-between overflow-hidden transition-all duration-300 ease-out hover:bg-gradient-to-br hover:from-blue-50/30 hover:to-indigo-50/30 hover:shadow-2xl ${
                           service.isPopular 
                             ? 'border-[#4f39f6]/40 shadow-xl shadow-indigo-500/5 ring-1 ring-[#4f39f6]/10' 
                             : 'border-[#60a5fa]/20 shadow-lg shadow-zinc-500/5 hover:border-blue-400/60'
                         }`}
                         style={{ transformStyle: 'preserve-3d' }}
                       >
-                        {/* Unique Glow Layer */}
+                        
                         <div 
-                          className="absolute top-0 right-0 w-36 h-36 rounded-full blur-xl pointer-events-none" 
+                          className="absolute top-0 right-0 w-28 h-28 sm:w-36 sm:h-36 rounded-full blur-xl pointer-events-none" 
                           style={{ 
                             backgroundImage: `radial-gradient(circle at top right, ${gradientColors})`,
                             transform: 'translateZ(15px)'
@@ -240,9 +235,9 @@ export default function Services() {
                         
                         <div style={{ transform: 'translateZ(30px)', transformStyle: 'preserve-3d' }} className="flex flex-col h-full justify-between">
                           <div>
-                            {/* Upper Badge & Icon Row */}
-                            <div className="flex items-center justify-between mb-6">
-                              <div className="w-11 h-11 relative flex items-center justify-center text-white scale-110 drop-shadow-[0_8px_16px_rgba(79,57,246,0.25)]">
+                            
+                            <div className="flex items-start sm:items-center justify-between gap-4 mb-5 sm:mb-6">
+                              <div className="w-10 h-10 sm:w-11 sm:h-11 relative flex items-center justify-center text-white scale-105 sm:scale-110 flex-shrink-0 drop-shadow-[0_6px_12px_rgba(79,57,246,0.25)]">
                                 <div className={`absolute inset-0 rounded-[30%_70%_70%_30%_/_50%_40%_60%_50%] animate-[spin_12s_linear_infinite] bg-gradient-to-tr ${
                                   service.isPopular ? 'from-[#4f39f6] via-[#8b5cf6] to-[#ffed4a]' : 'from-[#4f39f6] via-[#60a5fa] to-[#cbd5e1]'
                                 }`}></div>
@@ -251,13 +246,13 @@ export default function Services() {
                                 </div>
                               </div>
                               
-                              <div className="flex items-center gap-2">
+                              <div className="flex flex-wrap items-center justify-end gap-1.5 sm:gap-2">
                                 {service.isPopular && (
-                                  <span className="text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-sm">
+                                  <span className="text-[8px] sm:text-[9px] font-black uppercase tracking-widest px-1.5 sm:px-2 py-0.5 rounded bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-sm whitespace-nowrap">
                                     High ROI
                                   </span>
                                 )}
-                                <span className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md ${
+                                <span className={`text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md whitespace-nowrap ${
                                   service.isPopular ? 'bg-[#4f39f6] text-white' : 'bg-[#4f39f6]/10 text-[#4f39f6]'
                                 }`}>
                                   {service.tag}
@@ -265,20 +260,17 @@ export default function Services() {
                               </div>
                             </div>
 
-                            {/* Service Title */}
-                            <h4 className="font-sans font-extrabold text-[18px] md:text-[19px] text-zinc-900 mb-3 tracking-tight">
+                            <h4 className="font-sans font-extrabold text-base sm:text-[18px] md:text-[19px] text-zinc-900 mb-2 sm:mb-3 tracking-tight">
                               {service.title}
                             </h4>
 
-                            {/* Service Description */}
-                            <p className="text-sm text-zinc-600 leading-relaxed font-normal mb-6">
+                            <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed font-normal mb-5 sm:mb-6">
                               {service.description}
                             </p>
                           </div>
 
-                          {/* Conversion Footer with Action Link */}
-                          <div className="pt-4 border-t border-zinc-100 mt-auto flex items-center justify-between">
-                            <span className="text-xs text-zinc-400 font-medium tracking-tight">
+                          <div className="pt-3 sm:pt-4 border-t border-zinc-100 mt-auto flex items-center justify-between">
+                            <span className="text-[11px] sm:text-xs text-zinc-400 font-medium tracking-tight">
                               {service.metric}
                             </span>
                           </div>
