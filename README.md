@@ -72,14 +72,23 @@ My goal is simple:
 # 🚀 Services
 
 ✅ Custom Web Applications
+
 ✅ CRM Development
+
 ✅ SaaS Development
+
 ✅ Business Automation
+
 ✅ Admin Dashboards
+
 ✅ API Integration
+
 ✅ Payment Gateway Integration
+
 ✅ E-Commerce Development
+
 ✅ Website Performance Optimization
+
 ✅ Website Maintenance
 
 ---
@@ -125,13 +134,21 @@ Modern real estate website with premium UI and optimized performance.
 # 🎯 What I Build
 
 ✔ Business Management Systems
+
 ✔ CRM Platforms
+
 ✔ SaaS Products
+
 ✔ Enterprise Applications
+
 ✔ Custom Dashboards
+
 ✔ Inventory Systems
+
 ✔ Booking Systems
+
 ✔ E-Commerce Platforms
+
 ✔ Internal Business Tools
 
 ---
