@@ -15,7 +15,7 @@ export default function Portfolio() {
               Case Studies
             </p>
             <h2 className="reveal-trigger font-sans font-extrabold text-4xl md:text-5xl tracking-tight leading-tight mb-4 bg-gradient-to-tr from-[#4f39f6] via-[#38bdf8] to-[#94a3b8] bg-clip-text text-transparent">
-              Proven Business Outcomes
+              Real Results for Real Businesses
             </h2>
             <p className="text-sm text-zinc-500 max-w-xl font-light leading-relaxed">
               I don't just write clean code. I design custom internal systems, complex pricing engines, and automated workflows that eliminate operational bottlenecks and scale revenue.
@@ -27,7 +27,7 @@ export default function Portfolio() {
               href="#contact" 
               className="inline-block text-xs font-bold text-[#4f39f6] hover:text-zinc-900 border-b-2 border-[#4f39f6] hover:border-zinc-900 pb-1 transition-colors duration-200"
             >
-              Have a custom project in mind? Let's talk →
+              Have a custom project in mind? Book a Free Consultation →
             </a>
           </div>
         </div>
@@ -104,7 +104,7 @@ export default function Portfolio() {
         <div className="bg-white rounded-3xl p-8 border border-zinc-200/60 text-center max-w-3xl mx-auto relative z-10">
           <h4 className="font-sans font-bold text-xl text-zinc-900 mb-2">Need a high-performing backend system or custom CRM?</h4>
           <p className="text-xs text-zinc-500 mb-6 max-w-lg mx-auto">
-            Whether it's complex business rules, automation logic, or dynamic database architecture—I can engineer the exact system your workflow needs to grow.
+            Whether it's complex business rules, automation logic, or dynamic database architecture, I can engineer the exact system your workflow needs to grow.
           </p>
           <a 
             href="#contact" 

@@ -79,10 +79,10 @@ export default function Contact() {
                 Let's Build Something Great
               </p>
               <h2 className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-75 font-sans font-extrabold text-4xl md:text-5xl text-white tracking-tight leading-[1.15] mb-6">
-                Ready to kickstart<br/>your project?
+                Ready to Streamline Your Business?
               </h2>
               <p className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-150 text-zinc-300 font-light leading-relaxed mb-4">
-                Whether you need to scale custom administration systems, optimize complex operations, or engineer responsive, intuitive web applications from the ground up—I deliver robust architecture built for business growth.
+                Whether you need to scale custom administration systems, optimize complex operations, or engineer responsive, intuitive web applications from the ground up I deliver robust architecture built for business growth.
               </p>
               <p className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-150 text-zinc-400 font-light text-sm leading-relaxed">
                 Skip the long forms. Choose your preferred communication channel on the right to start detailing your application objectives directly with me.

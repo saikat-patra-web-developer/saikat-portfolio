@@ -156,7 +156,7 @@ export default function Reviews() {
             <div className="mt-6 flex flex-wrap items-center gap-y-3 gap-x-6 text-sm text-zinc-600">
               <span className="flex items-center gap-1.5 font-semibold text-zinc-800">
                 <i className="bi bi-star-fill text-amber-400"></i>
-                4.9/5 Rating on Google Business
+                <span class="text-emerald-600 font-semibold">4.9/5 Rating</span> on Google Business
               </span>
               <span className="hidden sm:inline text-zinc-300">|</span>
               <span className="flex items-center gap-1.5">

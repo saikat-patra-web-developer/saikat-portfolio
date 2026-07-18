@@ -48,31 +48,14 @@ export default function Workflow() {
               My Methodology
             </p>
             <h2 className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-75 font-sans font-extrabold text-4xl md:text-5xl tracking-tight leading-tight mb-4 bg-gradient-to-tr from-[#4f39f6] via-[#38bdf8] to-[#94a3b8] bg-clip-text text-transparent !opacity-100 !translate-y-0">
-              The Development Journey
+              How We'll Build Your Project
             </h2>
             <p className="text-base text-zinc-600 max-w-2xl font-normal leading-relaxed">
               A precision engineered <span className="bg-gradient-to-r from-[#4f39f6] to-[#60a5fa] bg-clip-text text-transparent font-extrabold tracking-tight">workflow designed</span> to take your vision from initial concept to a scalable, <span className="bg-gradient-to-r from-[#4f39f6] to-[#60a5fa] bg-clip-text text-transparent font-extrabold tracking-tight">live product</span> with zero friction.
             </p>
           </div>
         </div>
-
-
-       {/*  <div className="text-center mb-20 md:mb-28 flex flex-col items-center">
-          <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase text-sky-600 bg-sky-100/50 mb-6 ring-1 ring-sky-200">
-            Our Methodology
-          </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight text-slate-900">
-            The Development Journey
-          </h2>
-          <p className="text-base md:text-lg text-slate-500 max-w-2xl mx-auto px-4 leading-relaxed font-normal">
-            A precision-engineered workflow designed to take your vision from initial concept to a scalable, live product with zero friction.
-          </p>
-        </div> */}
-
-        {/* Desktop Hub & Spoke View */}
         <div className="hidden lg:grid grid-cols-12 gap-8 items-center max-w-6xl mx-auto mb-16">
-          
-          {/* Left Column */}
           <div className="col-span-4 flex-col space-y-12 pr-6">
             {steps.filter(s => s.side === 'left').map((step) => {
               const idx = steps.findIndex(s => s.number === step.number);

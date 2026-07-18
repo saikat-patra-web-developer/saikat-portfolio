@@ -23,10 +23,10 @@ export default function Hero() {
 
             {/* Value-Driven Headline */}
             <h1 className="font-sans font-black text-3xl xs:text-4xl sm:text-5xl lg:text-4xl xl:text-5xl min-[1440px]:text-6xl leading-[1.15] sm:leading-[1.1] tracking-tight text-zinc-900 mb-5 sm:mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4f39f6] via-[#38bdf8] to-[#9333ea]">Custom CRM, Web Apps & Business Automation</span> Built For Growing Businesses
+              Stop Managing Your Business in <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4f39f6] via-[#38bdf8] to-[#9333ea]">Excel</span>. Get a <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4f39f6] via-[#38bdf8] to-[#9333ea]">Custom CRM</span> That Saves Hours Every Week
             </h1>
             <p className="text-sm sm:text-base md:text-lg lg:text-lg xl:text-xl text-zinc-600 font-normal leading-relaxed max-w-xl mb-6 sm:mb-8">
-              I build <strong className="font-semibold text-zinc-900">custom CRM systems, scalable web applications, and business automation solutions</strong> that streamline operations, eliminate repetitive tasks, and help growing businesses work faster, smarter, and more efficiently.
+              Still tracking leads, projects, or inventory in spreadsheets? I build <strong className="font-semibold text-zinc-900">Custom CRM Systems & Eliminate Repetitive Manual Work</strong> that eliminate <strong className="font-semibold text-zinc-900">repetitive work, reduce errors,</strong> and help your team <strong className="font-semibold text-zinc-900">scale with confidence.</strong>
             </p>
 
             {/* Conversion Optimised CTAs */}
@@ -201,7 +201,7 @@ export default function Hero() {
                 <img 
                   className="w-full h-full object-contain transform scale-95" 
                   src="./my_image.png" 
-                  alt="Saikat Patra — UI/UX Designer & Full Stack Developer" 
+                  alt="Saikat Patra UI/UX Designer & Full Stack Developer" 
                   loading="eager" 
                 />
               </div>

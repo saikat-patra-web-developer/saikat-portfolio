@@ -38,7 +38,7 @@ export default function Footer({ currentYear }) {
               href="#portfolio" 
               className="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors"
             >
-              View Recent Work
+              See Client Success Stories
             </a>
             <a 
               href="mailto:your.email@example.com" 

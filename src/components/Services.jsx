@@ -18,7 +18,7 @@ export default function Services() {
           metric: "Built for scale"
         },
         {
-          title: "Custom CRM & Admin Panels",
+          title: "Custom CRM That Eliminates Manual Work",
           description: "Eliminate operational bottlenecks and manual spreadsheets. I build tailored administrative portals, custom booking engines, and interactive internal management hubs engineered to map perfectly to your business rules.",
           icon: <i className="bi bi-cpu" style={{ fontSize: '1.25rem' }}></i>,
           tag: "Operations",
@@ -44,7 +44,7 @@ export default function Services() {
       groupSubtitle: "Connecting business infrastructure to multiply team efficiency and leverage intelligence.",
       items: [
         {
-          title: "API & Workflow Automation",
+          title: "Connect All Your Business Tools Automatically",
           description: "Streamline communication, eradicate manual data entry, and unify fragmented business applications by securely connecting your internal CRM, payment workflows, and external third-party tools.",
           icon: <i className="bi bi-link-45deg" style={{ fontSize: '1.25rem' }}></i>,
           tag: "Integration",
@@ -100,7 +100,7 @@ export default function Services() {
           metric: "Lightning-fast performance"
         },
         {
-          title: "SEO-Optimized Platforms",
+          title: "Fast Websites Built to Rank Higher on Google",
           description: "Outrank your competition out of the box. Deploying production-grade server-rendered architectures that deliver blazing speed performance metrics and structural layouts that search engine algorithms reward.",
           icon: <i className="bi bi-boxes" style={{ fontSize: '1.25rem' }}></i>,
           tag: "Fullstack",
