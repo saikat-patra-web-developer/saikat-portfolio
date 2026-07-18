@@ -36,7 +36,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="relative py-28 bg-zinc-50 border-t border-b border-zinc-100 overflow-hidden">
+    <section id="about" className="relative py-20 bg-zinc-50 border-t border-b border-zinc-100 overflow-hidden">
       <style dangerouslySetInnerHTML={{__html: `
         :root {
           --base-radius: 120px;

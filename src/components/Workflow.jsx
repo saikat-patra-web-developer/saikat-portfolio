@@ -34,7 +34,7 @@ export default function Workflow() {
   }, [isHolding]);
 
   return (
-    <section id='workflow' className="relative py-28 bg-gradient-to-b from-white via-zinc-50/30 to-white overflow-hidden">
+    <section id='workflow' className="relative py-20 bg-gradient-to-b from-white via-zinc-50/30 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 md:mb-16">

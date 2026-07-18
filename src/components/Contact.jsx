@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-12 sm:py-24 bg-gradient-to-b from-white via-zinc-50/30 to-white overflow-hidden">
+    <section id="contact" className="relative py-20 bg-gradient-to-b from-white via-zinc-50/30 to-white overflow-hidden">
       <style>{`
         .perspective-container {
           perspective: 1200px;

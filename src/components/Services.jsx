@@ -146,7 +146,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="relative py-28 bg-zinc-50 border-t border-b border-zinc-100 overflow-hidden">
+    <section id="services" className="relative py-20 bg-zinc-50 border-t border-b border-zinc-100 overflow-hidden">
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes fadeInUp {
           from { opacity: 0; transform: translateY(24px); }

@@ -107,7 +107,7 @@ export default function Reviews() {
   const infiniteReviews = [...reviewsData, ...reviewsData];
 
   return (
-    <section id="reviews" className="relative py-28 bg-gradient-to-b from-white via-zinc-50/30 to-white overflow-hidden">
+    <section id="reviews" className="relative py-20 bg-gradient-to-b from-white via-zinc-50/30 to-white overflow-hidden">
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes marqueeVertical {
           0% { transform: translateY(0); }
