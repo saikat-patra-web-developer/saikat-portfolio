@@ -3,55 +3,6 @@ import React from 'react';
 export default function NavBar({ mobileMenuOpen, setMobileMenuOpen, scrolled, activeSection }) {
   return (
     <header className="fixed inset-x-0 top-0 z-50 transition-all duration-500 py-2 bg-transparent border-none">
-      <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes premiumNavEntry {
-          0% {
-            opacity: 0;
-            transform: translateY(-15px) scale(0.93);
-            filter: blur(4px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0) scale(0.95);
-            filter: blur(0);
-          }
-        }
-        @keyframes premiumMobileEntry {
-          0% {
-            opacity: 0;
-            transform: translateY(-15px) scale(0.97);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-          }
-        }
-        .animate-premium-nav {
-          animation: premiumNavEntry 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        .animate-premium-mobile {
-          animation: premiumMobileEntry 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        .nav-link-hover {
-          position: relative;
-          transition: cubic-bezier(0.16, 1, 0.3, 1) 0.4s !important;
-        }
-        .nav-link-hover::after {
-          content: '';
-          position: absolute;
-          bottom: 4px;
-          left: 50%;
-          width: 0;
-          height: 2px;
-          background: linear-gradient(90deg, #4f39f6, #60a5fa);
-          transform: translateX(-50%);
-          transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-          border-radius: 9999px;
-        }
-        .nav-link-hover:hover::after {
-          width: 40%;
-        }
-      `}} />
 
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between md:justify-center" aria-label="Main navigation">
         
