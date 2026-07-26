@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import NavBar from '../components/NavBar';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
@@ -6,7 +6,6 @@ import Portfolio from '../components/Portfolio';
 import About from '../components/About';
 import Reviews from '../components/Reviews';
 import Workflow from '../components/Workflow';
-import Blog from '../components/Workflow';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 

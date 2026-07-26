@@ -1,4 +1,3 @@
-import React from "react";
 
 export default function ProfessionalLogoLoader() {
   const color = "#f15a24";

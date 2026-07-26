@@ -1,6 +1,63 @@
-import React from 'react';
+
+import { useLanguage } from '../i18n/LanguageContext';
+
+const projectTechByLanguage = {
+  en: [
+    'React.js · Laravel API · CRM Architecture',
+    'WordPress CMS · Custom Dynamic Pricing · System Logic',
+    'WordPress · Tailwind CSS · Database Tuning',
+  ],
+  de: [
+    'React.js · Laravel API · CRM-Architektur',
+    'WordPress CMS · Individuelle dynamische Preisgestaltung · Systemlogik',
+    'WordPress · Tailwind CSS · Datenbankoptimierung',
+  ],
+  nl: [
+    'React.js · Laravel API · CRM-architectuur',
+    'WordPress CMS · Dynamische prijsstelling op maat · Systeemlogica',
+    'WordPress · Tailwind CSS · Databaseoptimalisatie',
+  ],
+  fr: [
+    'React.js · API Laravel · Architecture CRM',
+    'WordPress CMS · Tarification dynamique sur mesure · Logique système',
+    'WordPress · Tailwind CSS · Optimisation de base de données',
+  ],
+  pl: [
+    'React.js · Laravel API · Architektura CRM',
+    'WordPress CMS · Niestandardowe ceny dynamiczne · Logika systemu',
+    'WordPress · Tailwind CSS · Optymalizacja bazy danych',
+  ],
+  cs: [
+    'React.js · Laravel API · Architektura CRM',
+    'WordPress CMS · Dynamické ceny na míru · Systémová logika',
+    'WordPress · Tailwind CSS · Optimalizace databáze',
+  ],
+  sk: [
+    'React.js · Laravel API · Architektúra CRM',
+    'WordPress CMS · Dynamické ceny na mieru · Systémová logika',
+    'WordPress · Tailwind CSS · Optimalizácia databázy',
+  ],
+  es: [
+    'React.js · API Laravel · Arquitectura CRM',
+    'WordPress CMS · Precios dinámicos a medida · Lógica del sistema',
+    'WordPress · Tailwind CSS · Optimización de base de datos',
+  ],
+  it: [
+    'React.js · API Laravel · Architettura CRM',
+    'WordPress CMS · Prezzi dinamici su misura · Logica di sistema',
+    'WordPress · Tailwind CSS · Ottimizzazione del database',
+  ],
+  pt: [
+    'React.js · API Laravel · Arquitetura de CRM',
+    'WordPress CMS · Preços dinâmicos sob medida · Lógica do sistema',
+    'WordPress · Tailwind CSS · Otimização de banco de dados',
+  ],
+};
 
 export default function Portfolio() {
+  const { language } = useLanguage();
+  const projectTech = projectTechByLanguage[language] ?? projectTechByLanguage.en;
+
   return (
     <section id="portfolio" className="relative py-20 bg-zinc-50 border-t border-b border-zinc-100 overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30" />
@@ -43,7 +100,7 @@ export default function Portfolio() {
                 <span className="text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded">Saved 10+ Hours/Wk</span>
               </div>
               <h3 className="font-sans font-bold text-xl text-zinc-900 mb-2">Quote My Blinds CRM</h3>
-              <p className="text-xs font-semibold text-zinc-400 mb-4">React.js · Laravel API · CRM Architecture</p>
+              <p data-no-translate className="text-xs font-semibold text-zinc-400 mb-4">{projectTech[0]}</p>
               <div className="space-y-3 text-xs text-zinc-600 mb-6 flex-grow leading-relaxed">
                 <p><strong>The Challenge:</strong> The sales team wasted hours juggling manual spreadsheets, causing slow follow-ups and lost leads.</p>
                 <p><strong>The Solution:</strong> Engineered a bespoke CRM and multi-step automated pipeline system that completely digitized their lead-to-sale workflows.</p>
@@ -63,7 +120,7 @@ export default function Portfolio() {
                 <span className="text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded">Automated Operations</span>
               </div>
               <h3 className="font-sans font-bold text-xl text-zinc-900 mb-2">Purge Blinds Portal</h3>
-              <p className="text-xs font-semibold text-zinc-400 mb-4">WordPress CMS · Custom Dynamic Pricing · System Logic</p>
+              <p data-no-translate className="text-xs font-semibold text-zinc-400 mb-4">{projectTech[1]}</p>
               <div className="space-y-3 text-xs text-zinc-600 mb-6 flex-grow leading-relaxed">
                 <p><strong>The Challenge:</strong> Processing quotes for multi-variable, custom-manufactured window treatments required tedious manual calculations.</p>
                 <p><strong>The Solution:</strong> Built a comprehensive manufacturing and quoting application with complex, real-time pricing matrix rules to instantly automate overhead billing.</p>
@@ -83,7 +140,7 @@ export default function Portfolio() {
                 <span className="text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded">50% Speed Optimization</span>
               </div>
               <h3 className="font-sans font-bold text-xl text-zinc-900 mb-2">Dream Big Real Estate</h3>
-              <p className="text-xs font-semibold text-zinc-400 mb-4">WordPress · Tailwind CSS · Database Tuning</p>
+              <p data-no-translate className="text-xs font-semibold text-zinc-400 mb-4">{projectTech[2]}</p>
               <div className="space-y-3 text-xs text-zinc-600 mb-6 flex-grow leading-relaxed">
                 <p><strong>The Challenge:</strong> High bounce rates on a premium real estate platform due to sluggish database loading times and unoptimized media assets.</p>
                 <p><strong>The Solution:</strong> Restructured database query performance and streamlined heavy property listings, shaving page loads by ~50% to salvage user retention.</p>

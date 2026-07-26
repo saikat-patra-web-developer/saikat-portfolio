@@ -1,6 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
+import additionalLocales from '../i18n/additionalLocales.json';
 
 export default function Reviews() {
+  const { language } = useLanguage();
+  const starsLabel = {
+    en: 'stars',
+    de: 'Sterne',
+    nl: 'sterren',
+    fr: 'étoiles',
+    pl: 'gwiazdek',
+    cs: 'hvězdiček',
+    sk: 'hviezdičiek',
+    es: 'estrellas',
+    it: 'stelle',
+    pt: 'estrelas',
+  };
+  const ui = (english, german, czech, slovak) => (
+    language === 'de'
+      ? german
+      : language === 'cs'
+        ? czech
+        : language === 'sk'
+          ? slovak
+          : additionalLocales[language]?.[english] ?? english
+  );
   const googleBusinessProfileUrl = "https://g.page/r/CQnFt9EqwoOrEAE/review";
   const ctaUrl = "#contact"; 
 
@@ -107,7 +131,7 @@ export default function Reviews() {
   const infiniteReviews = [...reviewsData, ...reviewsData];
 
   return (
-    <section id="reviews" className="relative py-20 bg-gradient-to-b from-white via-zinc-50/30 to-white overflow-hidden">
+    <section id="reviews" data-no-translate className="relative py-20 bg-gradient-to-b from-white via-zinc-50/30 to-white overflow-hidden">
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes marqueeVertical {
           0% { transform: translateY(0); }
@@ -142,16 +166,16 @@ export default function Reviews() {
         <div className="mb-12 md:mb-16 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 md:gap-8 pb-8 border-b border-zinc-100">
           <div>
             <p className="mb-3 text-xs font-bold text-[#4f39f6] tracking-widest uppercase">
-              Proven Performance
+              {ui('Proven Performance', 'Nachgewiesene Leistung', 'Ověřený výkon', 'Overený výkon')}
             </p>
             <h2 className="reveal-trigger font-sans font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight mb-4 bg-gradient-to-tr from-[#4f39f6] via-[#38bdf8] to-[#94a3b8] bg-clip-text text-transparent">
-              Built for Scale | Backed by Trust
+              {ui('Built for Scale | Backed by Trust', 'Für Wachstum gebaut | Durch Vertrauen bestätigt', 'Připraveno na růst | Podloženo důvěrou', 'Pripravené na rast | Podložené dôverou')}
             </h2>            
             <div className="mt-6 flex flex-wrap items-center gap-y-3 gap-x-4 sm:gap-x-6 text-xs sm:text-sm text-zinc-600">
               <span className="flex items-center gap-1.5 text-zinc-800">
                 <i className="bi bi-star-fill text-amber-400"></i>
-                <span className="text-emerald-600 font-bold">4.9/5 Rating</span>
-                <span className="font-normal text-zinc-500">on</span>
+                <span className="text-emerald-600 font-bold">{ui('4.9/5 Rating', 'Bewertung: 4,9/5', 'Hodnocení 4,9/5', 'Hodnotenie 4,9/5')}</span>
+                <span className="font-normal text-zinc-500">{ui('on', 'bei', 'na', 'na')}</span>
                 <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                   <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -163,12 +187,12 @@ export default function Reviews() {
               <span className="hidden sm:inline text-zinc-300">|</span>
               <span className="flex items-center gap-1.5">
                 <i className="bi bi-shield-check text-emerald-600 font-bold"></i>
-                100% Verified Clients
+                {ui('100% Verified Clients', '100 % verifizierte Kunden', '100% ověření klienti', '100 % overení klienti')}
               </span>
               <span className="hidden sm:inline text-zinc-300">|</span>
               <span className="flex items-center gap-1.5">
                 <i className="bi bi-lightning-charge-fill text-amber-500"></i>
-                On-Time Delivery Guarantee
+                {ui('On-Time Delivery Guarantee', 'Garantie für pünktliche Lieferung', 'Záruka dodání včas', 'Záruka dodania načas')}
               </span>
             </div>
           </div>
@@ -186,14 +210,14 @@ export default function Reviews() {
                 <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
                 <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
               </svg>
-              View Google Reviews
+              {ui('View Google Reviews', 'Google-Bewertungen ansehen', 'Zobrazit recenze Google', 'Zobraziť recenzie Google')}
             </a>
             
             <a 
               href={ctaUrl}
               className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#4f39f6] to-[#2563eb] hover:from-[#3b28d9] hover:to-[#1d4ed8] text-white font-bold py-3.5 px-6 rounded-xl shadow-md shadow-[#4f39f6]/20 transition-all duration-200 text-sm hover:-translate-y-0.5 w-full sm:w-auto"
             >
-              Get a Free Quote
+              {ui('Get a Free Quote', 'Kostenloses Angebot', 'Nezávazná nabídka', 'Nezáväzná ponuka')}
               <i className="bi bi-arrow-right-short text-lg leading-none"></i>
             </a>
           </div>
@@ -257,7 +281,7 @@ export default function Reviews() {
                         ))}
                       </div>
                     </div>
-                    <p className="text-[9px] text-slate-400 mt-1 font-medium">{collageData.front.bottomLeftSub}</p>
+                    <p className="text-[9px] text-slate-400 mt-1 font-medium">{ui(collageData.front.bottomLeftSub, 'Deutschland + Gawenda Studio', 'Německo + Gawenda Studio', 'Nemecko + Gawenda Studio')}</p>
                   </div>
                 </div>
 
@@ -278,7 +302,7 @@ export default function Reviews() {
                         ))}
                       </div>
                     </div>
-                    <p className="text-[8px] text-slate-400 mt-0.5 font-medium truncate">{collageData.front.bottomLeftSub}</p>
+                    <p className="text-[8px] text-slate-400 mt-0.5 font-medium truncate">{ui(collageData.front.bottomLeftSub, 'Deutschland + Gawenda Studio', 'Německo + Gawenda Studio', 'Nemecko + Gawenda Studio')}</p>
                   </div>
                 </div>
 
@@ -374,7 +398,7 @@ export default function Reviews() {
                         ))}
                       </div>
                     </div>
-                    <p className="text-[9px] text-slate-400 mt-1 font-medium">{collageData.back.bottomLeftSub}</p>
+                    <p className="text-[9px] text-slate-400 mt-1 font-medium">{ui(collageData.back.bottomLeftSub, 'Neuseeland + Windows Blinds', 'Nový Zéland + Windows Blinds', 'Nový Zéland + Windows Blinds')}</p>
                   </div>
                 </div>
 
@@ -395,7 +419,7 @@ export default function Reviews() {
                         ))}
                       </div>
                     </div>
-                    <p className="text-[8px] text-slate-400 mt-0.5 font-medium truncate">{collageData.back.bottomLeftSub}</p>
+                    <p className="text-[8px] text-slate-400 mt-0.5 font-medium truncate">{ui(collageData.back.bottomLeftSub, 'Neuseeland + Windows Blinds', 'Nový Zéland + Windows Blinds', 'Nový Zéland + Windows Blinds')}</p>
                   </div>
                 </div>
 
@@ -451,7 +475,7 @@ export default function Reviews() {
                 >
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <div className="flex gap-0.5" aria-label={`${review.rating} stars`}>
+                      <div className="flex gap-0.5" aria-label={`${review.rating} ${starsLabel[language]}`}>
                         {[...Array(review.rating)].map((_, i) => (
                           <i key={i} className="bi bi-star-fill text-amber-400 text-xs" aria-hidden="true"></i>
                         ))}
@@ -459,7 +483,7 @@ export default function Reviews() {
                       {review.verified && (
                         <span className="inline-flex items-center gap-1 text-[10px] font-bold text-blue-600 bg-blue-50/50 px-2.5 py-1 rounded-full border border-blue-100/60">
                           <i className="bi bi-patch-check-fill text-[11px] leading-none text-[#2563eb]"></i>
-                          Verified Client Project
+                          {ui('Verified Client Project', 'Verifiziertes Kundenprojekt', 'Ověřený klientský projekt', 'Overený klientsky projekt')}
                         </span>
                       )}
                     </div>
@@ -479,11 +503,11 @@ export default function Reviews() {
                       </div>
                       <div>
                         <p className="font-bold text-xs text-zinc-900">{review.name}</p>
-                        <p className="text-[10px] text-zinc-500 font-semibold uppercase tracking-wider">{review.role}</p>
+                        <p className="text-[10px] text-zinc-500 font-semibold uppercase tracking-wider">{ui(review.role, 'Kunde', 'Klient', 'Klient')}</p>
                       </div>
                     </div>
                     <span className="text-[10px] font-semibold text-slate-400 group-hover:text-blue-600 transition-colors">
-                      On-Time Delivery <i className="bi bi-check-circle-fill text-emerald-500 ml-1"></i>
+                      {ui('On-Time Delivery', 'Pünktliche Lieferung', 'Dodání včas', 'Dodanie načas')} <i className="bi bi-check-circle-fill text-emerald-500 ml-1"></i>
                     </span>
                   </footer>
                 </blockquote>

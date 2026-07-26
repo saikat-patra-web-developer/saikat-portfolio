@@ -1,4 +1,3 @@
-import React from 'react';
 import { FileText, Star, User } from 'lucide-react';
 
 export default function Hero() {

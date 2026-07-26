@@ -1,7 +1,21 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { User, Layers, X, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 export default function About() {
+  const { language } = useLanguage();
+  const caseStudyTitle = {
+    en: (skill) => `View ${skill} case studies`,
+    de: (skill) => `${skill}-Fallstudien ansehen`,
+    nl: (skill) => `Bekijk ${skill}-casestudy's`,
+    fr: (skill) => `Voir les études de cas ${skill}`,
+    pl: (skill) => `Zobacz studia przypadków ${skill}`,
+    cs: (skill) => `Zobrazit případové studie ${skill}`,
+    sk: (skill) => `Zobraziť prípadové štúdie ${skill}`,
+    es: (skill) => `Ver casos de estudio de ${skill}`,
+    it: (skill) => `Visualizza i casi di studio ${skill}`,
+    pt: (skill) => `Ver estudos de caso de ${skill}`,
+  };
   const skills = [
     'React JS', 'Next.js', 'Laravel (API)', 'Symfony (API)', 
     'WordPress', 'Tailwind CSS', 'Bootstrap CSS', 'JavaScript', 
@@ -116,7 +130,7 @@ export default function About() {
                   <button
                     key={skill}
                     onClick={() => handleSkillClick(skill)}
-                    title={`Click to see my ${skill} case studies`}
+                    title={caseStudyTitle[language](skill)}
                     className={`orbiting-skill pointer-events-auto absolute left-1/2 top-1/2 -ml-12 -mt-4 cursor-pointer select-none text-[10px] sm:text-xs font-semibold px-3 py-1.5 rounded-xl border scale-110 shadow-lg transition-all duration-300 ${
                       isSelected 
                         ? 'bg-[#4f39f6] text-white border-[#4f39f6]' 
@@ -205,7 +219,6 @@ export default function About() {
 
             <div className="reveal-trigger opacity-0 translate-y-6 transition-[opacity,transform] duration-700 ease-out delay-300 flex flex-wrap gap-2.5 max-w-xl">
               {skills.map((skill) => {
-                const isSelected = selectedSkill === skill;
                 return (
                   <span 
                     key={skill}
